@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GestionQRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GestionQRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Clientes">
           <Key>
             <PropertyRef Name="Id" />
@@ -25,7 +25,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tipo_departamento" Type="bigint" Nullable="false" />
-          <Property Name="encargado_departamento" Type="bigint" Nullable="false" />
+          <Property Name="encargado_departamento" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -254,8 +254,7 @@ FROM [dbo].[Usuarios_de_quejas] AS [Usuarios_de_quejas]</DefiningQuery>
 FROM [dbo].[Usuarios_de_reclamaciones] AS [Usuarios_de_reclamaciones]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GestionQRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -279,7 +278,7 @@ FROM [dbo].[Usuarios_de_reclamaciones] AS [Usuarios_de_reclamaciones]</DefiningQ
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tipo_departamento" Type="Int64" Nullable="false" />
-          <Property Name="encargado_departamento" Type="Int64" Nullable="false" />
+          <Property Name="encargado_departamento" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>

@@ -16,6 +16,6 @@ namespace GestionQR.Models
     {
         public int id { get; set; }
         public long tipo_departamento { get; set; }
-        public long encargado_departamento { get; set; }
+        public string encargado_departamento { get; set; }
     }
 }
