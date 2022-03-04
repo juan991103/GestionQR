@@ -128,68 +128,60 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ClientesController.cs" />
-    <Compile Include="Controllers\DepartamentosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
-    <Compile Include="Controllers\PuestoController.cs" />
-    <Compile Include="Controllers\QuejasController.cs" />
-    <Compile Include="Controllers\ReclamacionesController.cs" />
-    <Compile Include="Controllers\RolController.cs" />
-    <Compile Include="Controllers\TipoQuejasController.cs" />
-    <Compile Include="Controllers\TipoReclamacionController.cs" />
-    <Compile Include="Controllers\UsuariosQuejasController.cs" />
-    <Compile Include="Controllers\UsuariosReclamacionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Clientes.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModel.Context.cs">
+    <Compile Include="Models\DataContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
+      <DependentUpon>DataContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModel.cs">
+    <Compile Include="Models\DataContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModel.Designer.cs">
+    <Compile Include="Models\DataContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
+      <DependentUpon>DataContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Departamentos.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estado.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Producto.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Puesto.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Quejas.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Reclamaciones.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Rol.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Tipo_de_quejas.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Tipo_quejas.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Tipo_de_reclamación.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Tipo_reclamacion.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Usuarios_de_quejas.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Usuarios_quejas.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Usuarios_de_reclamaciones.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Usuarios_reclamaciones.cs">
+      <DependentUpon>DataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -268,15 +260,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\DataModel.Context.tt">
+    <Content Include="Models\DataContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
+      <DependentUpon>DataContext.edmx</DependentUpon>
+      <LastGenOutput>DataContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DataModel.tt">
+    <Content Include="Models\DataContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
+      <DependentUpon>DataContext.edmx</DependentUpon>
+      <LastGenOutput>DataContext.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -332,12 +324,12 @@
     <Content Include="Content\assets\scss\_mixin.scss" />
     <Content Include="Content\assets\scss\_sidebar.scss" />
     <Content Include="Content\assets\scss\_variables.scss" />
-    <EntityDeploy Include="Models\DataModel.edmx">
+    <EntityDeploy Include="Models\DataContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
+    <Content Include="Models\DataContext.edmx.diagram">
+      <DependentUpon>DataContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

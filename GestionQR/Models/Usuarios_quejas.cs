@@ -12,22 +12,25 @@ namespace GestionQR.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Quejas
+    public partial class Usuarios_quejas
     {
         public int Id { get; set; }
-        public int Id_Cliente { get; set; }
-        public string Usuario_Quejas { get; set; }
-        public int Tipo_Quejas { get; set; }
-        public string Departamento_Queja { get; set; }
-        public string Encargado_Queja { get; set; }
+        public long Usuario_quejas { get; set; }
+        public int Clave { get; set; }
+        public int Departamento_Queja { get; set; }
         public System.DateTime Fecha_Queja { get; set; }
         public System.DateTime Hora_Queja { get; set; }
-        public string Departamento_Respuesta { get; set; }
-        public System.DateTime Fecha_Respuesta { get; set; }
-        public int Estado_Quejas { get; set; }
-        public string Comentarios_Queja { get; set; }
+        public int Rol { get; set; }
+        public int Puesto { get; set; }
+        public int Cliente { get; set; }
+        public int Producto { get; set; }
+        public int Estado { get; set; }
     
-        public virtual Estado Estado { get; set; }
-        public virtual Tipo_quejas Tipo_quejas1 { get; set; }
+        public virtual Clientes Clientes { get; set; }
+        public virtual Departamentos Departamentos { get; set; }
+        public virtual Estado Estado1 { get; set; }
+        public virtual Producto Producto1 { get; set; }
+        public virtual Puesto Puesto1 { get; set; }
+        public virtual Rol Rol1 { get; set; }
     }
 }

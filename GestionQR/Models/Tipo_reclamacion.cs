@@ -12,21 +12,20 @@ namespace GestionQR.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Rol
+    public partial class Tipo_reclamacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Rol()
+        public Tipo_reclamacion()
         {
-            this.Usuarios_quejas = new HashSet<Usuarios_quejas>();
-            this.Usuarios_reclamaciones = new HashSet<Usuarios_reclamaciones>();
+            this.Reclamaciones = new HashSet<Reclamaciones>();
         }
     
         public int Id { get; set; }
-        public string Descripcion_Rol { get; set; }
+        public string Descripción { get; set; }
+        public int Estado { get; set; }
     
+        public virtual Estado Estado1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios_quejas> Usuarios_quejas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios_reclamaciones> Usuarios_reclamaciones { get; set; }
+        public virtual ICollection<Reclamaciones> Reclamaciones { get; set; }
     }
 }
