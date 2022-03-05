@@ -1,0 +1,112 @@
+﻿@model GestionQR.Models.Reclamaciones
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Reclamaciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario_Reclamo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario_Reclamo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento_Reclamacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamento_Reclamacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Encargado_Reclamacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Encargado_Reclamacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Reclamacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Reclamacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_Reclamacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_Reclamacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento_Respuesta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamento_Respuesta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Respuesta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Respuesta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentarios_Reclamaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentarios_Reclamaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_reclamacion1.Descripción)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_reclamacion1.Descripción)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
