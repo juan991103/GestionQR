@@ -17,16 +17,16 @@ namespace GestionQR.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Rol()
         {
-            this.Usuarios_quejas = new HashSet<Usuarios_quejas>();
-            this.Usuarios_reclamaciones = new HashSet<Usuarios_reclamaciones>();
+            this.Gestor_usuarios_quejas = new HashSet<Gestor_usuarios_quejas>();
+            this.Gestor_usuarios_reclamaciones = new HashSet<Gestor_usuarios_reclamaciones>();
         }
     
         public int Id { get; set; }
         public string Descripcion_Rol { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios_quejas> Usuarios_quejas { get; set; }
+        public virtual ICollection<Gestor_usuarios_quejas> Gestor_usuarios_quejas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios_reclamaciones> Usuarios_reclamaciones { get; set; }
+        public virtual ICollection<Gestor_usuarios_reclamaciones> Gestor_usuarios_reclamaciones { get; set; }
     }
 }

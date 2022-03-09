@@ -17,8 +17,8 @@ namespace GestionQR.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Departamentos()
         {
-            this.Usuarios_quejas = new HashSet<Usuarios_quejas>();
-            this.Usuarios_reclamaciones = new HashSet<Usuarios_reclamaciones>();
+            this.Quejas = new HashSet<Quejas>();
+            this.Reclamaciones = new HashSet<Reclamaciones>();
         }
     
         public int id { get; set; }
@@ -26,8 +26,8 @@ namespace GestionQR.Models
         public string encargado_departamento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios_quejas> Usuarios_quejas { get; set; }
+        public virtual ICollection<Quejas> Quejas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios_reclamaciones> Usuarios_reclamaciones { get; set; }
+        public virtual ICollection<Reclamaciones> Reclamaciones { get; set; }
     }
 }

@@ -14,23 +14,20 @@ namespace GestionQR.Models
     
     public partial class Usuarios_reclamaciones
     {
-        public int Id { get; set; }
-        public long Usuario_reclamo { get; set; }
-        public int Clave { get; set; }
-        public int Departamento_Reclamacion { get; set; }
-        public System.DateTime Fecha_Reclamacion { get; set; }
-        public System.DateTime Hora_Reclamacion { get; set; }
-        public int Rol { get; set; }
-        public int Puesto { get; set; }
-        public int Cliente { get; set; }
-        public int Producto { get; set; }
-        public int Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Usuarios_reclamaciones()
+        {
+            this.Gestor_usuarios_reclamaciones = new HashSet<Gestor_usuarios_reclamaciones>();
+            this.Reclamaciones = new HashSet<Reclamaciones>();
+        }
     
-        public virtual Clientes Clientes { get; set; }
-        public virtual Departamentos Departamentos { get; set; }
-        public virtual Estado Estado1 { get; set; }
-        public virtual Producto Producto1 { get; set; }
-        public virtual Puesto Puesto1 { get; set; }
-        public virtual Rol Rol1 { get; set; }
+        public int Id { get; set; }
+        public string Usuario_reclamo { get; set; }
+        public string Clave { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Gestor_usuarios_reclamaciones> Gestor_usuarios_reclamaciones { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reclamaciones> Reclamaciones { get; set; }
     }
 }

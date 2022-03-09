@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6f054ab70f544fd19fe7330df57c3687" Name="Diagram1">
+        <EntityTypeShape EntityType="GestionQRModel.Clientes" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Departamentos" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Estado" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Gestor_usuarios_quejas" Width="1.5" PointX="10.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Gestor_usuarios_reclamaciones" Width="1.5" PointX="13.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Producto" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Puesto" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Quejas" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Reclamaciones" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Rol" Width="1.5" PointX="8.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Tipo_quejas" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Tipo_reclamacion" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Usuarios_quejas" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Usuarios_reclamaciones" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="GestionQRModel.FK__Clientes__Estado__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Quejas__Nombre_C__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Reclamaci__Nombr__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Quejas__Departam__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Reclamaci__Depar__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Estad__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Estad__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Producto__Estado__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Quejas__Estado_Q__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Reclamaci__Estad__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Tipo_quej__Estad__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Tipo_recl__Estad__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Depar__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Nombr__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Puest__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Usuar__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_usua__Rol__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Depar__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Nombr__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Puest__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_us__Usuar__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Gestor_usua__Rol__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Quejas__Tipo_Pro__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Reclamaci__Tipo___534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Quejas__Tipo_Que__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Quejas__Usuario___6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Reclamaci__Tipo___52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="GestionQRModel.FK__Reclamaci__Usuar__6C190EBB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

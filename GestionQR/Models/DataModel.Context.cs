@@ -28,6 +28,8 @@ namespace GestionQR.Models
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Departamentos> Departamentos { get; set; }
         public virtual DbSet<Estado> Estado { get; set; }
+        public virtual DbSet<Gestor_usuarios_quejas> Gestor_usuarios_quejas { get; set; }
+        public virtual DbSet<Gestor_usuarios_reclamaciones> Gestor_usuarios_reclamaciones { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Puesto> Puesto { get; set; }
         public virtual DbSet<Quejas> Quejas { get; set; }

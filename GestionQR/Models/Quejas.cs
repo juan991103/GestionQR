@@ -14,12 +14,19 @@ namespace GestionQR.Models
     
     public partial class Quejas
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Quejas()
+        {
+            this.Gestor_usuarios_quejas = new HashSet<Gestor_usuarios_quejas>();
+            this.Gestor_usuarios_quejas1 = new HashSet<Gestor_usuarios_quejas>();
+        }
+    
         public int Id { get; set; }
-        public int Id_Cliente { get; set; }
-        public string Usuario_Quejas { get; set; }
+        public int Nombre_Cliente { get; set; }
         public int Tipo_Quejas { get; set; }
-        public string Departamento_Queja { get; set; }
-        public string Encargado_Queja { get; set; }
+        public int Tipo_Producto { get; set; }
+        public int Departamento_a_Queja { get; set; }
+        public int Usuario_Quejas_Atendido { get; set; }
         public System.DateTime Fecha_Queja { get; set; }
         public System.DateTime Hora_Queja { get; set; }
         public string Departamento_Respuesta { get; set; }
@@ -27,7 +34,15 @@ namespace GestionQR.Models
         public int Estado_Quejas { get; set; }
         public string Comentarios_Queja { get; set; }
     
+        public virtual Clientes Clientes { get; set; }
+        public virtual Departamentos Departamentos { get; set; }
         public virtual Estado Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Gestor_usuarios_quejas> Gestor_usuarios_quejas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Gestor_usuarios_quejas> Gestor_usuarios_quejas1 { get; set; }
+        public virtual Producto Producto { get; set; }
         public virtual Tipo_quejas Tipo_quejas1 { get; set; }
+        public virtual Usuarios_quejas Usuarios_quejas { get; set; }
     }
 }

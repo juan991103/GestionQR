@@ -14,23 +14,20 @@ namespace GestionQR.Models
     
     public partial class Usuarios_quejas
     {
-        public int Id { get; set; }
-        public long Usuario_quejas { get; set; }
-        public int Clave { get; set; }
-        public int Departamento_Queja { get; set; }
-        public System.DateTime Fecha_Queja { get; set; }
-        public System.DateTime Hora_Queja { get; set; }
-        public int Rol { get; set; }
-        public int Puesto { get; set; }
-        public int Cliente { get; set; }
-        public int Producto { get; set; }
-        public int Estado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Usuarios_quejas()
+        {
+            this.Gestor_usuarios_quejas = new HashSet<Gestor_usuarios_quejas>();
+            this.Quejas = new HashSet<Quejas>();
+        }
     
-        public virtual Clientes Clientes { get; set; }
-        public virtual Departamentos Departamentos { get; set; }
-        public virtual Estado Estado1 { get; set; }
-        public virtual Producto Producto1 { get; set; }
-        public virtual Puesto Puesto1 { get; set; }
-        public virtual Rol Rol1 { get; set; }
+        public int Id { get; set; }
+        public string Usuario_quejas { get; set; }
+        public string Clave { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Gestor_usuarios_quejas> Gestor_usuarios_quejas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Quejas> Quejas { get; set; }
     }
 }

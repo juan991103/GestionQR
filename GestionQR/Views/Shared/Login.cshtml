@@ -17,3 +17,11 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+<?php
+session_start(); // Includes Login Script
+
+if(isset($_SESSION['username'])){
+    header("location: objects/profile.php"); // Redirecting To Profile Page
+}
+?>
