@@ -1,16 +1,17 @@
 ﻿
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Usuarios";
     Layout = "~/Views/Shared/Login.cshtml";
 }
 
-<h1>GestionQR</h1>
+<h1>QR Project Manager</h1>
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
         <h2 class="active"> USUARIOS </h2>
-        <a class="inactive underlineHover" href="Administrador">ADMINISTRADOR </a>
+        <a class="inactive underlineHover" href="Login"> USUARIOS </a>
+        <a class="inactive underlineHover" href="Administrador"> ADMINISTRADOR </a>
 
         <!-- Icon -->
         <div class="fadeIn first">
@@ -20,7 +21,7 @@
         <!-- Login Form -->
         <form method="post">
             <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
-            <input type="text" id="password" class="fadeIn third"  name="password" placeholder="Contraseña">
+            <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
             <input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">
         </form>
 

@@ -9,11 +9,24 @@ namespace SistemaRH.Controllers
 {
     public class LoginController : Controller
     {
-        public ActionResult Login()
+        public ActionResult Buzon()
         {
             return View();
         }
 
+        public ActionResult Usuarios()
+        {
+            //write logic here  
+            return View();
+        }
+
+        public ActionResult Administrador()
+        {
+            //write logic here  
+            return View();
+        }
+
+        /*
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(Usuarios_quejas quejas, Usuarios_reclamaciones reclamacion)
@@ -41,7 +54,7 @@ namespace SistemaRH.Controllers
             }
             return View();
         }
-
+        
         public ActionResult UserDashBoard()
         {
             if (Session["Id"] != null)
@@ -53,11 +66,6 @@ namespace SistemaRH.Controllers
                 return RedirectToAction("Home");
             }
         }
-
-        public ActionResult Administrador()
-        {
-            //write logic here  
-            return View();
-        }
+        */
     }
 }
