@@ -19,7 +19,7 @@ namespace SistemaRH.Controllers
             return View();
         }
 
-        public ActionResult Users()
+        public ActionResult Usuarios()
         {
             //write logic here  
             return View();
