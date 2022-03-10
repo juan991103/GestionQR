@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="~/Content/css/login.css" />
 </head>
 <body>
-
     <main role="main" class="pb-3">
-        @RenderBody()
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                @RenderBody()
+            </div> 
+        </div> 
     </main>
-
     @RenderSection("scripts", required: false)
 </body>
 </html>

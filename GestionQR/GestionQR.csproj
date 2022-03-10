@@ -341,6 +341,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Usuarios\ClientesController.cs" />
+    <Compile Include="Controllers\Usuarios\UsuariosQuejasController.cs" />
+    <Compile Include="Controllers\Usuarios\UsuariosReclamacionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -580,6 +583,21 @@
     <Content Include="Views\Login\Administrador.cshtml" />
     <Content Include="Views\Login\Usuarios.cshtml" />
     <Content Include="Views\Login\Buzon.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Create.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Delete.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Details.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Edit.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Index.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Create.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Delete.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Details.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
