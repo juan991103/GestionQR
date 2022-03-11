@@ -10,6 +10,6 @@
 @Html.ActionLink("USUARIOS", "Usuarios", "Login", null, new { @class = "inactive underlineHover" })
 @Html.ActionLink("ADMINISTRADOR", "Administrador", "Login", null, new { @class = "inactive underlineHover" })
 
-<a href="CreateCliente">
+<a href="@Url.Action("CreateCliente", "Login")">
     <input type="submit" class="btn fadeIn fourth" value="LLenar Buzon" name="submit">
 </a>

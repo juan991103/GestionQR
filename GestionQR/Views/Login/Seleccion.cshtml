@@ -4,5 +4,12 @@
     Layout = "~/Views/Shared/Login.cshtml";
 }
 
-<h2>Seleccion</h2>
+<h1>Que deseas realizar?</h1>
 
+<a href="@Url.Action("CreateQueja", "Login")">
+    <input type="submit" class="btn fadeIn fourth" value="Poner una Queja" name="submit">
+</a>
+
+<a href="@Url.Action("CreateReclamo", "Login")">
+    <input type="submit" class="btn fadeIn fourth" value="Poner una reclamacion" name="submit">
+</a>
