@@ -7,7 +7,7 @@
 <h1>QR Project Manager</h1>
 
 <!-- Tabs Titles -->
-<a class="inactive underlineHover" href="Buzon"> PRINCIPAL </a>
+<a class="inactive underlineHover" href="BuzonPrincipal"> PRINCIPAL </a>
 <h2 class="active"> USUARIOS </h2>
 <a class="inactive underlineHover" href="Administrador"> ADMINISTRADOR </a>
 
@@ -17,11 +17,12 @@
 </div>
 
 <!-- Login Form -->
-<form action="user/login.php>
+@using (Html.BeginForm("Seleccion", "Buzon", FormMethod.Post)) 
+{
     <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
     <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
     <input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">
-</form>
+}
 
 <!-- Remind Passowrd -->
 <div id="formFooter">

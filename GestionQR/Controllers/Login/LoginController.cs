@@ -9,9 +9,36 @@ namespace SistemaRH.Controllers
 {
     public class LoginController : Controller
     {
-        public ActionResult Buzon()
+        private GestionQREntities db = new GestionQREntities();
+
+        public ActionResult BuzonPrincipal()
         {
             return View();
+        }
+
+        // GET: Clientes/Create
+        public ActionResult CreateCliente()
+        {
+            ViewBag.Estado = new SelectList(db.Estado, "Id", "Descripcion");
+            return View();
+        }
+
+        // POST: Clientes/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
+        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCliente([Bind(Include = "Id,Nombres_Cliente,Apellidos_Cliente,Teléfono,Direccion,Provincia,Sector,Email,Estado")] Clientes clientes)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Clientes.Add(clientes);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Estado = new SelectList(db.Estado, "Id", "Descripcion", clientes.Estado);
+            return View(clientes);
         }
 
         public ActionResult Usuarios()

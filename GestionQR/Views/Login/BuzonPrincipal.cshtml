@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Buzon";
+    ViewBag.Title = "BuzonPrincipal";
     Layout = "~/Views/Shared/Login.cshtml";
 }
 
@@ -8,10 +8,9 @@
 
 <!-- Tabs Titles -->
 <h2 class="active"> PRINCIPAL </h2>
-<a class="inactive underlineHover" href="Buzon"> USUARIOS </a>
+<a class="inactive underlineHover" href="Usuarios"> USUARIOS </a>
 <a class="inactive underlineHover" href="Administrador"> ADMINISTRADOR </a>
 
-@using (Html.BeginForm(Html.BeginForm("Index", "Home")))
-{
+<a href="CreateCliente">
     <input type="submit" class="btn fadeIn fourth" value="LLenar Buzon" name="submit">
-}
+</a>

@@ -339,11 +339,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\Login\QuejasController.cs" />
+    <Compile Include="Controllers\Login\ReclamacionesController.cs" />
+    <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Usuarios\ClientesController.cs" />
-    <Compile Include="Controllers\Usuarios\UsuariosQuejasController.cs" />
-    <Compile Include="Controllers\Usuarios\UsuariosReclamacionesController.cs" />
+    <Compile Include="Controllers\Login\ClientesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -582,22 +582,24 @@
     <Content Include="Views\Shared\Login.cshtml" />
     <Content Include="Views\Login\Administrador.cshtml" />
     <Content Include="Views\Login\Usuarios.cshtml" />
-    <Content Include="Views\Login\Buzon.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Create.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Delete.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Details.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Edit.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Index.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Create.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Delete.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Details.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
+    <Content Include="Views\Login\BuzonPrincipal.cshtml" />
+    <Content Include="Views\Quejas\Create.cshtml" />
+    <Content Include="Views\Quejas\Delete.cshtml" />
+    <Content Include="Views\Quejas\Details.cshtml" />
+    <Content Include="Views\Quejas\Edit.cshtml" />
+    <Content Include="Views\Quejas\Index.cshtml" />
+    <Content Include="Views\Reclamaciones\Create.cshtml" />
+    <Content Include="Views\Reclamaciones\Delete.cshtml" />
+    <Content Include="Views\Reclamaciones\Details.cshtml" />
+    <Content Include="Views\Reclamaciones\Edit.cshtml" />
+    <Content Include="Views\Reclamaciones\Index.cshtml" />
     <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Clientes\Delete.cshtml" />
     <Content Include="Views\Clientes\Details.cshtml" />
     <Content Include="Views\Clientes\Edit.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Login\Seleccion.cshtml" />
+    <Content Include="Views\Login\CreateCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
