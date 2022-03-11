@@ -7,9 +7,9 @@
 <h1>QR Project Manager</h1>
 
 <!-- Tabs Titles -->
-<a class="inactive underlineHover" href="BuzonPrincipal"> PRINCIPAL </a>
+@Html.ActionLink("PRINCIPAL", "BuzonPrincipal", "Login", null, new { @class = "inactive underlineHover" })
 <h2 class="active"> USUARIOS </h2>
-<a class="inactive underlineHover" href="Administrador"> ADMINISTRADOR </a>
+@Html.ActionLink("ADMINISTRADOR", "Administrador", "Login", null, new { @class = "inactive underlineHover" })
 
 <!-- Icon -->
 <div class="fadeIn first">
@@ -17,7 +17,7 @@
 </div>
 
 <!-- Login Form -->
-@using (Html.BeginForm("Seleccion", "Buzon", FormMethod.Post)) 
+@using (Html.BeginForm("Seleccion", "Buzon", FormMethod.Post))
 {
     <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
     <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
