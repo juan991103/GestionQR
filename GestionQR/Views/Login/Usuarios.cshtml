@@ -20,8 +20,16 @@
 {
     <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
     <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-    <input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">
+    <!--<input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">-->
 }
+
+<a href="@Url.Action("Index", "UsuariosQ")">
+    <input type="submit" class="btn fadeIn fourth" value="Ver Interfaz de Queja" name="submit">
+</a>
+
+<a href="@Url.Action("Index", "UsuariosR")">
+    <input type="submit" class="btn fadeIn fourth" value="Ver Interfaz de Reclamacion" name="submit">
+</a>
 
 <!-- Remind Passowrd -->
 <div id="formFooter">

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<GestionQR.Models.Reclamaciones>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UsuarioR.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_Reclamacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora_Reclamacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento_Respuesta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_Respuesta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentarios_Reclamaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamentos.encargado_departamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.Tipo_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_reclamacion1.Descripción)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios_reclamaciones.Usuario_reclamo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_Reclamacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora_Reclamacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento_Respuesta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_Respuesta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comentarios_Reclamaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamentos.encargado_departamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.Tipo_Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_reclamacion1.Descripción)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios_reclamaciones.Usuario_reclamo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

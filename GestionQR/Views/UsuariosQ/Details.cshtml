@@ -1,0 +1,35 @@
+﻿@model GestionQR.Models.Usuarios_quejas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/UsuarioQ.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Usuarios_quejas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario_quejas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario_quejas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clave)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

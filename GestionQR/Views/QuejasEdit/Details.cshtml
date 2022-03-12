@@ -1,0 +1,107 @@
+﻿@model GestionQR.Models.Quejas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/UsuarioQ.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quejas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Queja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Queja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_Queja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_Queja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento_Respuesta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamento_Respuesta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Respuesta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Respuesta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentarios_Queja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentarios_Queja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.Nombres_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamentos.encargado_departamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamentos.encargado_departamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.Tipo_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.Tipo_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_quejas1.Descripción)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_quejas1.Descripción)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuarios_quejas.Usuario_quejas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuarios_quejas.Usuario_quejas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
