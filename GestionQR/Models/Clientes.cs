@@ -11,8 +11,7 @@ namespace GestionQR.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Clientes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,21 +22,13 @@ namespace GestionQR.Models
         }
     
         public int Id { get; set; }
-        [Required]
         public string Nombres_Cliente { get; set; }
-        [Required]
         public string Apellidos_Cliente { get; set; }
-        [Required]
         public string Teléfono { get; set; }
-        [Required]
         public string Direccion { get; set; }
-        [Required]
         public string Provincia { get; set; }
-        [Required]
         public string Sector { get; set; }
-        [Required]
         public string Email { get; set; }
-        [Required]
         public int Estado { get; set; }
     
         public virtual Estado Estado1 { get; set; }
