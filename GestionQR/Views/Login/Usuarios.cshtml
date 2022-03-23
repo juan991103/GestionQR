@@ -1,4 +1,6 @@
-﻿@{
+﻿@model GestionQR.Models.Usuarios_quejas
+
+@{
     ViewBag.Title = "Usuarios";
     Layout = "~/Views/Shared/Login.cshtml";
 }
@@ -16,11 +18,36 @@
 </div>
 
 <!-- Login Form -->
-@using (Html.BeginForm("Seleccion", "Buzon", FormMethod.Post))
+@using (Html.BeginForm("Usuarios", "Login", FormMethod.Post))
 {
-    <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
-    <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-    <!--<input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">-->
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border: 1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    if (as)
+    {
+        @Html.TextBoxFor(a => a.Usuario_quejas, new { @class = "fadeIn second", placeholder = "Usuario" })
+        @Html.ValidationMessageFor(a => a.Usuario_quejas)
+
+        @Html.PasswordFor(a => a.Clave, new { @class = "fadeIn third", placeholder = "Contraseña" })
+        @Html.ValidationMessageFor(a => a.Clave)
+    }
+    else
+    {
+        @Html.TextBoxFor(a => a.Usuario_quejas, new { @class = "fadeIn second", placeholder = "Usuario" })
+        @Html.ValidationMessageFor(a => a.Usuario_quejas)
+
+        @Html.PasswordFor(a => a.Clave, new { @class = "fadeIn third", placeholder = "Contraseña" })
+        @Html.ValidationMessageFor(a => a.Clave)
+    }
+
+
+    <input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">
 }
 
 <a href="@Url.Action("Index", "UsuariosQ")">

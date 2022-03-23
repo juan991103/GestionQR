@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using GestionQR.Controllers.Usuarios;
 
 namespace SistemaRH.Controllers
 {
@@ -45,6 +46,26 @@ namespace SistemaRH.Controllers
         {
             //write logic here  
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Usuarios(Usuarios_quejas objUser)
+        {
+            if (ModelState.IsValid)
+            {
+                using (GestionQREntities db = new GestionQREntities())
+                {
+                    var obj = db.Usuarios_quejas.Where(a => a.Usuario_quejas.Equals(objUser.Usuario_quejas) && a.Clave.Equals(objUser.Clave)).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        Session["Id"] = obj.Id.ToString();
+                        Session["Usuario_quejas"] = obj.Usuario_quejas.ToString();
+                        return RedirectToAction("Index", "UsuariosQ");
+                    }
+                }
+            }
+            return View(objUser);
         }
 
         public ActionResult Administrador()

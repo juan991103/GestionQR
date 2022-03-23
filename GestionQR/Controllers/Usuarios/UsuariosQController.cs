@@ -17,7 +17,14 @@ namespace GestionQR.Controllers.Usuarios
         // GET: UsuariosQ
         public ActionResult Index()
         {
-            return View(db.Usuarios_quejas.ToList());
+            if (Session["Id"] != null)
+            {
+                return View(db.Usuarios_quejas.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Usuarios", "Login");
+            }
         }
 
         // GET: UsuariosQ/Details/5
