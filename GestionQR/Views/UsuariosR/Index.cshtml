@@ -7,6 +7,20 @@
 
 <h2>Index</h2>
 
+<div class="profile-info">
+    <div class="info">
+        @if (Session["Usuario_reclamo"] != null)
+        {
+            <h6>
+                Bienvenido @Session["Usuario_reclamo"].ToString()
+            </h6>
+        }
+        <div class="image">
+            <span class="status"></span>
+        </div>
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -21,20 +35,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario_reclamo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clave)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario_reclamo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clave)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

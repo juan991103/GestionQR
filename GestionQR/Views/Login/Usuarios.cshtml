@@ -17,48 +17,10 @@
     <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
 </div>
 
-<!-- Login Form -->
-@using (Html.BeginForm("Usuarios", "Login", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    if (@ViewBag.Message != null)
-    {
-        <div style="border: 1px solid red">
-            @ViewBag.Message
-        </div>
-    }
-
-    if (as)
-    {
-        @Html.TextBoxFor(a => a.Usuario_quejas, new { @class = "fadeIn second", placeholder = "Usuario" })
-        @Html.ValidationMessageFor(a => a.Usuario_quejas)
-
-        @Html.PasswordFor(a => a.Clave, new { @class = "fadeIn third", placeholder = "Contraseña" })
-        @Html.ValidationMessageFor(a => a.Clave)
-    }
-    else
-    {
-        @Html.TextBoxFor(a => a.Usuario_quejas, new { @class = "fadeIn second", placeholder = "Usuario" })
-        @Html.ValidationMessageFor(a => a.Usuario_quejas)
-
-        @Html.PasswordFor(a => a.Clave, new { @class = "fadeIn third", placeholder = "Contraseña" })
-        @Html.ValidationMessageFor(a => a.Clave)
-    }
-
-
-    <input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">
-}
-
-<a href="@Url.Action("Index", "UsuariosQ")">
-    <input type="submit" class="btn fadeIn fourth" value="Ver Interfaz de Queja" name="submit">
+<a href="@Url.Action("LoginQuejas", "Login")">
+    <input type="submit" class="btn fadeIn fourth" value="Gestionar Quejas" name="submit">
 </a>
 
-<a href="@Url.Action("Index", "UsuariosR")">
-    <input type="submit" class="btn fadeIn fourth" value="Ver Interfaz de Reclamacion" name="submit">
+<a href="@Url.Action("LoginReclamaciones", "Login")">
+    <input type="submit" class="btn fadeIn fourth" value="Gestionar Reclamaciones" name="submit">
 </a>
-
-<!-- Remind Passowrd -->
-<div id="formFooter">
-    <a class="underlineHover" href="#">Recuperar Contraseña?</a>
-</div>

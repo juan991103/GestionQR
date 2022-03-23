@@ -684,6 +684,8 @@
     <Content Include="Views\ReclamacionesEdit\Details.cshtml" />
     <Content Include="Views\ReclamacionesEdit\Edit.cshtml" />
     <Content Include="Views\ReclamacionesEdit\Index.cshtml" />
+    <Content Include="Views\Login\LoginQuejas.cshtml" />
+    <Content Include="Views\Login\LoginReclamaciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -48,9 +48,15 @@ namespace SistemaRH.Controllers
             return View();
         }
 
+        public ActionResult LoginQuejas()
+        {
+            //write logic here  
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Usuarios(Usuarios_quejas objUser)
+        public ActionResult LoginQuejas(Usuarios_quejas objUser)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +72,32 @@ namespace SistemaRH.Controllers
                 }
             }
             return View(objUser);
+        }
+
+        public ActionResult LoginReclamaciones()
+        {
+            //write logic here  
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LoginReclamaciones(Usuarios_reclamaciones objUser2)
+        {
+            if (ModelState.IsValid)
+            {
+                using (GestionQREntities db = new GestionQREntities())
+                {
+                    var obj2 = db.Usuarios_reclamaciones.Where(b => b.Usuario_reclamo.Equals(objUser2.Usuario_reclamo) && b.Clave.Equals(objUser2.Clave)).FirstOrDefault();
+                    if (obj2 != null)
+                    {
+                        Session["Id"] = obj2.Id.ToString();
+                        Session["Usuario_reclamo"] = obj2.Usuario_reclamo.ToString();
+                        return RedirectToAction("Index", "UsuariosR");
+                    }
+                }
+            }
+            return View(objUser2);
         }
 
         public ActionResult Administrador()

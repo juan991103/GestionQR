@@ -191,16 +191,21 @@
                                         id="profile"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                    <div class="profile-info">
-                                        <div class="info">
-                                            <h6>Usuario</h6>
-                                            <div class="image">
-                                                <img src="~/Content/assets/images/profile/profile-image.png"
-                                                     alt="" />
-                                                <span class="status"></span>
+                                        <div class="profile-info">
+                                            <div class="info">
+                                                @if (Session["Usuario_quejas"] != null)
+                                                {
+                                                    <h6>
+                                                        Bienvenido @Session["Usuario_quejas"].ToString()
+                                                    </h6>
+                                                }
+                                                <div class="image">
+                                                    <img src="~/Content/assets/images/profile/profile-image.png"
+                                                         alt="" />
+                                                    <span class="status"></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <i class="lni lni-chevron-down"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end"

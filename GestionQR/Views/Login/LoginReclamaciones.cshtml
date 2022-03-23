@@ -1,0 +1,40 @@
+﻿@model GestionQR.Models.Usuarios_reclamaciones
+
+@{
+    ViewBag.Title = "LoginReclamaciones";
+    Layout = "~/Views/Shared/Login.cshtml";
+}
+
+<h1>QR Project Manager</h1>
+
+<h3 class="active">Inicie Sesion para gestionar las reclamaciones</h3>
+
+<!-- Icon -->
+<div class="fadeIn first">
+    <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+</div>
+
+<!-- Login Form -->
+@using (Html.BeginForm("LoginReclamaciones", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border: 1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    @Html.TextBoxFor(b => b.Usuario_reclamo, new { @class = "fadeIn second", placeholder = "Usuario" })
+    @Html.ValidationMessageFor(b => b.Usuario_reclamo)
+    
+    @Html.PasswordFor(b => b.Clave, new { @class = "fadeIn third", placeholder = "Contraseña" })
+    @Html.ValidationMessageFor(b => b.Clave)
+    <input type="submit" class="btn fadeIn fourth" value="Iniciar Sesion" name="submit">
+}
+
+<!-- Remind Passowrd -->
+<div id="formFooter">
+    <a class="underlineHover" href="#">Recuperar Contraseña?</a>
+</div>

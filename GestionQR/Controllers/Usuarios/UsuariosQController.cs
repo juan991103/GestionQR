@@ -23,7 +23,7 @@ namespace GestionQR.Controllers.Usuarios
             }
             else
             {
-                return RedirectToAction("Usuarios", "Login");
+                return RedirectToAction("LoginQuejas", "Login");
             }
         }
 
