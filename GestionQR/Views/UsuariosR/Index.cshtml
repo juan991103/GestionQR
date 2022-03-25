@@ -7,20 +7,6 @@
 
 <h2>Index</h2>
 
-<div class="profile-info">
-    <div class="info">
-        @if (Session["Usuario_reclamo"] != null)
-        {
-            <h6>
-                Bienvenido @Session["Usuario_reclamo"].ToString()
-            </h6>
-        }
-        <div class="image">
-            <span class="status"></span>
-        </div>
-    </div>
-</div>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
