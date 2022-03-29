@@ -28,7 +28,7 @@ namespace GestionQR.Models
         public int Departamento_a_Reclamacion { get; set; }
         public int Usuario_Reclamo_Atendido { get; set; }
         public System.DateTime Fecha_Reclamacion { get; set; }
-        public System.DateTime Hora_Reclamacion { get; set; }
+        public System.TimeSpan Hora_Reclamacion { get; set; }
         public string Departamento_Respuesta { get; set; }
         public System.DateTime Fecha_Respuesta { get; set; }
         public int Estado_Reclamacion { get; set; }

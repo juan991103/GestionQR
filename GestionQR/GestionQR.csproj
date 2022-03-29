@@ -357,8 +357,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Usuarios\QuejasEditController.cs" />
     <Compile Include="Controllers\Usuarios\ReclamacionesEditController.cs" />
-    <Compile Include="Controllers\Usuarios\UsuariosQController.cs" />
-    <Compile Include="Controllers\Usuarios\UsuariosRController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -673,10 +671,6 @@
     <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
     <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
     <Content Include="Views\Shared\UsuarioR.cshtml" />
-    <Content Include="Views\UsuariosQ\Details.cshtml" />
-    <Content Include="Views\UsuariosQ\Index.cshtml" />
-    <Content Include="Views\UsuariosR\Details.cshtml" />
-    <Content Include="Views\UsuariosR\Index.cshtml" />
     <Content Include="Views\Shared\UsuarioQ.cshtml" />
     <Content Include="Views\QuejasEdit\Index.cshtml" />
     <Content Include="Views\QuejasEdit\Details.cshtml" />

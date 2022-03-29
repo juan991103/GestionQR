@@ -26,6 +26,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tipo_departamento" Type="bigint" Nullable="false" />
           <Property Name="encargado_departamento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Departamento" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -85,8 +86,8 @@
           <Property Name="Tipo_Producto" Type="int" Nullable="false" />
           <Property Name="Departamento_a_Queja" Type="int" Nullable="false" />
           <Property Name="Usuario_Quejas_Atendido" Type="int" Nullable="false" />
-          <Property Name="Fecha_Queja" Type="datetime" Nullable="false" />
-          <Property Name="Hora_Queja" Type="datetime" Nullable="false" />
+          <Property Name="Fecha_Queja" Type="date" Nullable="false" />
+          <Property Name="Hora_Queja" Type="time" Precision="7" Nullable="false" />
           <Property Name="Departamento_Respuesta" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="Fecha_Respuesta" Type="datetime" Nullable="false" />
           <Property Name="Estado_Quejas" Type="int" Nullable="false" />
@@ -102,8 +103,8 @@
           <Property Name="Tipo_Producto" Type="int" Nullable="false" />
           <Property Name="Departamento_a_Reclamacion" Type="int" Nullable="false" />
           <Property Name="Usuario_Reclamo_Atendido" Type="int" Nullable="false" />
-          <Property Name="Fecha_Reclamacion" Type="datetime" Nullable="false" />
-          <Property Name="Hora_Reclamacion" Type="datetime" Nullable="false" />
+          <Property Name="Fecha_Reclamacion" Type="date" Nullable="false" />
+          <Property Name="Hora_Reclamacion" Type="time" Precision="7" Nullable="false" />
           <Property Name="Departamento_Respuesta" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Fecha_Respuesta" Type="datetime" Nullable="false" />
           <Property Name="Estado_Reclamacion" Type="int" Nullable="false" />
@@ -160,19 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Depar__5FB337D6">
-          <End Role="Quejas" Type="Self.Quejas" Multiplicity="1" />
-          <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Quejas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Gestor_usuarios_quejas">
-              <PropertyRef Name="Departamento_Queja" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Gestor_us__Depar__6754599E">
+        <Association Name="FK__Gestor_us__Depar__06CD04F7">
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -184,7 +173,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Estad__628FA481">
+        <Association Name="FK__Gestor_us__Depar__7F2BE32F">
+          <End Role="Quejas" Type="Self.Quejas" Multiplicity="1" />
+          <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quejas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gestor_usuarios_quejas">
+              <PropertyRef Name="Departamento_Queja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gestor_us__Estad__02084FDA">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -196,7 +197,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Estad__6A30C649">
+        <Association Name="FK__Gestor_us__Estad__09A971A2">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -208,19 +209,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Nombr__5EBF139D">
-          <End Role="Quejas" Type="Self.Quejas" Multiplicity="1" />
-          <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Quejas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Gestor_usuarios_quejas">
-              <PropertyRef Name="Nombre_Cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Gestor_us__Nombr__66603565">
+        <Association Name="FK__Gestor_us__Nombr__05D8E0BE">
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -232,7 +221,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Puest__619B8048">
+        <Association Name="FK__Gestor_us__Nombr__7E37BEF6">
+          <End Role="Quejas" Type="Self.Quejas" Multiplicity="1" />
+          <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quejas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gestor_usuarios_quejas">
+              <PropertyRef Name="Nombre_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gestor_us__Puest__01142BA1">
           <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -244,7 +245,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Puest__693CA210">
+        <Association Name="FK__Gestor_us__Puest__08B54D69">
           <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -256,19 +257,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Usuar__5DCAEF64">
-          <End Role="Usuarios_quejas" Type="Self.Usuarios_quejas" Multiplicity="1" />
-          <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios_quejas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Gestor_usuarios_quejas">
-              <PropertyRef Name="Usuario_quejas" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Gestor_us__Usuar__656C112C">
+        <Association Name="FK__Gestor_us__Usuar__04E4BC85">
           <End Role="Usuarios_reclamaciones" Type="Self.Usuarios_reclamaciones" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -280,7 +269,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_usua__Rol__60A75C0F">
+        <Association Name="FK__Gestor_us__Usuar__7D439ABD">
+          <End Role="Usuarios_quejas" Type="Self.Usuarios_quejas" Multiplicity="1" />
+          <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios_quejas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gestor_usuarios_quejas">
+              <PropertyRef Name="Usuario_quejas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gestor_usua__Rol__00200768">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -292,7 +293,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_usua__Rol__68487DD7">
+        <Association Name="FK__Gestor_usua__Rol__07C12930">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -316,7 +317,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Departam__4D94879B">
+        <Association Name="FK__Quejas__Departam__72C60C4A">
           <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -328,7 +329,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Estado_Q__4E88ABD4">
+        <Association Name="FK__Quejas__Estado_Q__73BA3083">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -340,7 +341,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Nombre_C__4AB81AF0">
+        <Association Name="FK__Quejas__Nombre_C__6FE99F9F">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -352,7 +353,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Tipo_Pro__4CA06362">
+        <Association Name="FK__Quejas__Tipo_Pro__71D1E811">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -364,7 +365,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Tipo_Que__4BAC3F29">
+        <Association Name="FK__Quejas__Tipo_Que__70DDC3D8">
           <End Role="Tipo_quejas" Type="Self.Tipo_quejas" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -376,7 +377,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Usuario___6B24EA82">
+        <Association Name="FK__Quejas__Usuario___0A9D95DB">
           <End Role="Usuarios_quejas" Type="Self.Usuarios_quejas" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -388,7 +389,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Depar__5441852A">
+        <Association Name="FK__Reclamaci__Depar__797309D9">
           <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -400,7 +401,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Estad__5535A963">
+        <Association Name="FK__Reclamaci__Estad__7A672E12">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -412,7 +413,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Nombr__5165187F">
+        <Association Name="FK__Reclamaci__Nombr__76969D2E">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -424,7 +425,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Tipo___52593CB8">
+        <Association Name="FK__Reclamaci__Tipo___778AC167">
           <End Role="Tipo_reclamacion" Type="Self.Tipo_reclamacion" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -436,7 +437,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Tipo___534D60F1">
+        <Association Name="FK__Reclamaci__Tipo___787EE5A0">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -448,7 +449,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Usuar__6C190EBB">
+        <Association Name="FK__Reclamaci__Usuar__0B91BA14">
           <End Role="Usuarios_reclamaciones" Type="Self.Usuarios_reclamaciones" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -503,51 +504,51 @@
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Clientes" EntitySet="Clientes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Depar__5FB337D6" Association="Self.FK__Gestor_us__Depar__5FB337D6">
-            <End Role="Quejas" EntitySet="Quejas" />
-            <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Depar__6754599E" Association="Self.FK__Gestor_us__Depar__6754599E">
+          <AssociationSet Name="FK__Gestor_us__Depar__06CD04F7" Association="Self.FK__Gestor_us__Depar__06CD04F7">
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Estad__628FA481" Association="Self.FK__Gestor_us__Estad__628FA481">
-            <End Role="Estado" EntitySet="Estado" />
-            <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Estad__6A30C649" Association="Self.FK__Gestor_us__Estad__6A30C649">
-            <End Role="Estado" EntitySet="Estado" />
-            <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Nombr__5EBF139D" Association="Self.FK__Gestor_us__Nombr__5EBF139D">
+          <AssociationSet Name="FK__Gestor_us__Depar__7F2BE32F" Association="Self.FK__Gestor_us__Depar__7F2BE32F">
             <End Role="Quejas" EntitySet="Quejas" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Nombr__66603565" Association="Self.FK__Gestor_us__Nombr__66603565">
+          <AssociationSet Name="FK__Gestor_us__Estad__02084FDA" Association="Self.FK__Gestor_us__Estad__02084FDA">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gestor_us__Estad__09A971A2" Association="Self.FK__Gestor_us__Estad__09A971A2">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gestor_us__Nombr__05D8E0BE" Association="Self.FK__Gestor_us__Nombr__05D8E0BE">
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Puest__619B8048" Association="Self.FK__Gestor_us__Puest__619B8048">
+          <AssociationSet Name="FK__Gestor_us__Nombr__7E37BEF6" Association="Self.FK__Gestor_us__Nombr__7E37BEF6">
+            <End Role="Quejas" EntitySet="Quejas" />
+            <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gestor_us__Puest__01142BA1" Association="Self.FK__Gestor_us__Puest__01142BA1">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Puest__693CA210" Association="Self.FK__Gestor_us__Puest__693CA210">
+          <AssociationSet Name="FK__Gestor_us__Puest__08B54D69" Association="Self.FK__Gestor_us__Puest__08B54D69">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Usuar__5DCAEF64" Association="Self.FK__Gestor_us__Usuar__5DCAEF64">
-            <End Role="Usuarios_quejas" EntitySet="Usuarios_quejas" />
-            <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Usuar__656C112C" Association="Self.FK__Gestor_us__Usuar__656C112C">
+          <AssociationSet Name="FK__Gestor_us__Usuar__04E4BC85" Association="Self.FK__Gestor_us__Usuar__04E4BC85">
             <End Role="Usuarios_reclamaciones" EntitySet="Usuarios_reclamaciones" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_usua__Rol__60A75C0F" Association="Self.FK__Gestor_usua__Rol__60A75C0F">
+          <AssociationSet Name="FK__Gestor_us__Usuar__7D439ABD" Association="Self.FK__Gestor_us__Usuar__7D439ABD">
+            <End Role="Usuarios_quejas" EntitySet="Usuarios_quejas" />
+            <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gestor_usua__Rol__00200768" Association="Self.FK__Gestor_usua__Rol__00200768">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_usua__Rol__68487DD7" Association="Self.FK__Gestor_usua__Rol__68487DD7">
+          <AssociationSet Name="FK__Gestor_usua__Rol__07C12930" Association="Self.FK__Gestor_usua__Rol__07C12930">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
@@ -555,51 +556,51 @@
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Departam__4D94879B" Association="Self.FK__Quejas__Departam__4D94879B">
+          <AssociationSet Name="FK__Quejas__Departam__72C60C4A" Association="Self.FK__Quejas__Departam__72C60C4A">
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Estado_Q__4E88ABD4" Association="Self.FK__Quejas__Estado_Q__4E88ABD4">
+          <AssociationSet Name="FK__Quejas__Estado_Q__73BA3083" Association="Self.FK__Quejas__Estado_Q__73BA3083">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Nombre_C__4AB81AF0" Association="Self.FK__Quejas__Nombre_C__4AB81AF0">
+          <AssociationSet Name="FK__Quejas__Nombre_C__6FE99F9F" Association="Self.FK__Quejas__Nombre_C__6FE99F9F">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Tipo_Pro__4CA06362" Association="Self.FK__Quejas__Tipo_Pro__4CA06362">
+          <AssociationSet Name="FK__Quejas__Tipo_Pro__71D1E811" Association="Self.FK__Quejas__Tipo_Pro__71D1E811">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Tipo_Que__4BAC3F29" Association="Self.FK__Quejas__Tipo_Que__4BAC3F29">
+          <AssociationSet Name="FK__Quejas__Tipo_Que__70DDC3D8" Association="Self.FK__Quejas__Tipo_Que__70DDC3D8">
             <End Role="Tipo_quejas" EntitySet="Tipo_quejas" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Usuario___6B24EA82" Association="Self.FK__Quejas__Usuario___6B24EA82">
+          <AssociationSet Name="FK__Quejas__Usuario___0A9D95DB" Association="Self.FK__Quejas__Usuario___0A9D95DB">
             <End Role="Usuarios_quejas" EntitySet="Usuarios_quejas" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Depar__5441852A" Association="Self.FK__Reclamaci__Depar__5441852A">
+          <AssociationSet Name="FK__Reclamaci__Depar__797309D9" Association="Self.FK__Reclamaci__Depar__797309D9">
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Estad__5535A963" Association="Self.FK__Reclamaci__Estad__5535A963">
+          <AssociationSet Name="FK__Reclamaci__Estad__7A672E12" Association="Self.FK__Reclamaci__Estad__7A672E12">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Nombr__5165187F" Association="Self.FK__Reclamaci__Nombr__5165187F">
+          <AssociationSet Name="FK__Reclamaci__Nombr__76969D2E" Association="Self.FK__Reclamaci__Nombr__76969D2E">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Tipo___52593CB8" Association="Self.FK__Reclamaci__Tipo___52593CB8">
+          <AssociationSet Name="FK__Reclamaci__Tipo___778AC167" Association="Self.FK__Reclamaci__Tipo___778AC167">
             <End Role="Tipo_reclamacion" EntitySet="Tipo_reclamacion" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Tipo___534D60F1" Association="Self.FK__Reclamaci__Tipo___534D60F1">
+          <AssociationSet Name="FK__Reclamaci__Tipo___787EE5A0" Association="Self.FK__Reclamaci__Tipo___787EE5A0">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Usuar__6C190EBB" Association="Self.FK__Reclamaci__Usuar__6C190EBB">
+          <AssociationSet Name="FK__Reclamaci__Usuar__0B91BA14" Association="Self.FK__Reclamaci__Usuar__0B91BA14">
             <End Role="Usuarios_reclamaciones" EntitySet="Usuarios_reclamaciones" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
@@ -621,8 +622,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombres_Cliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Apellidos_Cliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nombres_Cliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Apellidos_Cliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Teléfono" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Provincia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -630,8 +631,8 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Estado1" Relationship="Self.FK__Clientes__Estado__47DBAE45" FromRole="Clientes" ToRole="Estado" />
-          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Nombre_C__4AB81AF0" FromRole="Clientes" ToRole="Quejas" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Nombr__5165187F" FromRole="Clientes" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Nombre_C__6FE99F9F" FromRole="Clientes" ToRole="Quejas" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Nombr__76969D2E" FromRole="Clientes" ToRole="Reclamaciones" />
         </EntityType>
         <EntityType Name="Departamentos">
           <Key>
@@ -640,8 +641,9 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tipo_departamento" Type="Int64" Nullable="false" />
           <Property Name="encargado_departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Departam__4D94879B" FromRole="Departamentos" ToRole="Quejas" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Depar__5441852A" FromRole="Departamentos" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Departam__72C60C4A" FromRole="Departamentos" ToRole="Quejas" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Depar__797309D9" FromRole="Departamentos" ToRole="Reclamaciones" />
+          <Property Name="Nombre_Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -650,11 +652,11 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Clientes" Relationship="Self.FK__Clientes__Estado__47DBAE45" FromRole="Estado" ToRole="Clientes" />
-          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Estad__628FA481" FromRole="Estado" ToRole="Gestor_usuarios_quejas" />
-          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Estad__6A30C649" FromRole="Estado" ToRole="Gestor_usuarios_reclamaciones" />
+          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Estad__02084FDA" FromRole="Estado" ToRole="Gestor_usuarios_quejas" />
+          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Estad__09A971A2" FromRole="Estado" ToRole="Gestor_usuarios_reclamaciones" />
           <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__Estado__3D5E1FD2" FromRole="Estado" ToRole="Producto" />
-          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Estado_Q__4E88ABD4" FromRole="Estado" ToRole="Quejas" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Estad__5535A963" FromRole="Estado" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Estado_Q__73BA3083" FromRole="Estado" ToRole="Quejas" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Estad__7A672E12" FromRole="Estado" ToRole="Reclamaciones" />
           <NavigationProperty Name="Tipo_quejas" Relationship="Self.FK__Tipo_quej__Estad__4222D4EF" FromRole="Estado" ToRole="Tipo_quejas" />
           <NavigationProperty Name="Tipo_reclamacion" Relationship="Self.FK__Tipo_recl__Estad__44FF419A" FromRole="Estado" ToRole="Tipo_reclamacion" />
         </EntityType>
@@ -669,12 +671,12 @@
           <Property Name="Rol" Type="Int32" Nullable="false" />
           <Property Name="Puesto" Type="Int32" Nullable="false" />
           <Property Name="Estado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Estado1" Relationship="Self.FK__Gestor_us__Estad__628FA481" FromRole="Gestor_usuarios_quejas" ToRole="Estado" />
-          <NavigationProperty Name="Quejas" Relationship="Self.FK__Gestor_us__Depar__5FB337D6" FromRole="Gestor_usuarios_quejas" ToRole="Quejas" />
-          <NavigationProperty Name="Quejas1" Relationship="Self.FK__Gestor_us__Nombr__5EBF139D" FromRole="Gestor_usuarios_quejas" ToRole="Quejas" />
-          <NavigationProperty Name="Puesto1" Relationship="Self.FK__Gestor_us__Puest__619B8048" FromRole="Gestor_usuarios_quejas" ToRole="Puesto" />
-          <NavigationProperty Name="Usuarios_quejas" Relationship="Self.FK__Gestor_us__Usuar__5DCAEF64" FromRole="Gestor_usuarios_quejas" ToRole="Usuarios_quejas" />
-          <NavigationProperty Name="Rol1" Relationship="Self.FK__Gestor_usua__Rol__60A75C0F" FromRole="Gestor_usuarios_quejas" ToRole="Rol" />
+          <NavigationProperty Name="Estado1" Relationship="Self.FK__Gestor_us__Estad__02084FDA" FromRole="Gestor_usuarios_quejas" ToRole="Estado" />
+          <NavigationProperty Name="Quejas" Relationship="Self.FK__Gestor_us__Depar__7F2BE32F" FromRole="Gestor_usuarios_quejas" ToRole="Quejas" />
+          <NavigationProperty Name="Quejas1" Relationship="Self.FK__Gestor_us__Nombr__7E37BEF6" FromRole="Gestor_usuarios_quejas" ToRole="Quejas" />
+          <NavigationProperty Name="Puesto1" Relationship="Self.FK__Gestor_us__Puest__01142BA1" FromRole="Gestor_usuarios_quejas" ToRole="Puesto" />
+          <NavigationProperty Name="Usuarios_quejas" Relationship="Self.FK__Gestor_us__Usuar__7D439ABD" FromRole="Gestor_usuarios_quejas" ToRole="Usuarios_quejas" />
+          <NavigationProperty Name="Rol1" Relationship="Self.FK__Gestor_usua__Rol__00200768" FromRole="Gestor_usuarios_quejas" ToRole="Rol" />
         </EntityType>
         <EntityType Name="Gestor_usuarios_reclamaciones">
           <Key>
@@ -687,12 +689,12 @@
           <Property Name="Rol" Type="Int32" Nullable="false" />
           <Property Name="Puesto" Type="Int32" Nullable="false" />
           <Property Name="Estado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Estado1" Relationship="Self.FK__Gestor_us__Estad__6A30C649" FromRole="Gestor_usuarios_reclamaciones" ToRole="Estado" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Gestor_us__Depar__6754599E" FromRole="Gestor_usuarios_reclamaciones" ToRole="Reclamaciones" />
-          <NavigationProperty Name="Reclamaciones1" Relationship="Self.FK__Gestor_us__Nombr__66603565" FromRole="Gestor_usuarios_reclamaciones" ToRole="Reclamaciones" />
-          <NavigationProperty Name="Puesto1" Relationship="Self.FK__Gestor_us__Puest__693CA210" FromRole="Gestor_usuarios_reclamaciones" ToRole="Puesto" />
-          <NavigationProperty Name="Usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Usuar__656C112C" FromRole="Gestor_usuarios_reclamaciones" ToRole="Usuarios_reclamaciones" />
-          <NavigationProperty Name="Rol1" Relationship="Self.FK__Gestor_usua__Rol__68487DD7" FromRole="Gestor_usuarios_reclamaciones" ToRole="Rol" />
+          <NavigationProperty Name="Estado1" Relationship="Self.FK__Gestor_us__Estad__09A971A2" FromRole="Gestor_usuarios_reclamaciones" ToRole="Estado" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Gestor_us__Depar__06CD04F7" FromRole="Gestor_usuarios_reclamaciones" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Reclamaciones1" Relationship="Self.FK__Gestor_us__Nombr__05D8E0BE" FromRole="Gestor_usuarios_reclamaciones" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Puesto1" Relationship="Self.FK__Gestor_us__Puest__08B54D69" FromRole="Gestor_usuarios_reclamaciones" ToRole="Puesto" />
+          <NavigationProperty Name="Usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Usuar__04E4BC85" FromRole="Gestor_usuarios_reclamaciones" ToRole="Usuarios_reclamaciones" />
+          <NavigationProperty Name="Rol1" Relationship="Self.FK__Gestor_usua__Rol__07C12930" FromRole="Gestor_usuarios_reclamaciones" ToRole="Rol" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -703,8 +705,8 @@
           <Property Name="Fecha_Ortogamiento" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Estado_Producto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Estado" Relationship="Self.FK__Producto__Estado__3D5E1FD2" FromRole="Producto" ToRole="Estado" />
-          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Tipo_Pro__4CA06362" FromRole="Producto" ToRole="Quejas" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Tipo___534D60F1" FromRole="Producto" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Tipo_Pro__71D1E811" FromRole="Producto" ToRole="Quejas" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Tipo___787EE5A0" FromRole="Producto" ToRole="Reclamaciones" />
         </EntityType>
         <EntityType Name="Puesto">
           <Key>
@@ -713,8 +715,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Funciones" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Puest__619B8048" FromRole="Puesto" ToRole="Gestor_usuarios_quejas" />
-          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Puest__693CA210" FromRole="Puesto" ToRole="Gestor_usuarios_reclamaciones" />
+          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Puest__01142BA1" FromRole="Puesto" ToRole="Gestor_usuarios_quejas" />
+          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Puest__08B54D69" FromRole="Puesto" ToRole="Gestor_usuarios_reclamaciones" />
         </EntityType>
         <EntityType Name="Quejas">
           <Key>
@@ -726,20 +728,20 @@
           <Property Name="Tipo_Producto" Type="Int32" Nullable="false" />
           <Property Name="Departamento_a_Queja" Type="Int32" Nullable="false" />
           <Property Name="Usuario_Quejas_Atendido" Type="Int32" Nullable="false" />
-          <Property Name="Fecha_Queja" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Hora_Queja" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fecha_Queja" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora_Queja" Type="Time" Nullable="false" Precision="7" />
           <Property Name="Departamento_Respuesta" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Fecha_Respuesta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Estado_Quejas" Type="Int32" Nullable="false" />
           <Property Name="Comentarios_Queja" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Clientes" Relationship="Self.FK__Quejas__Nombre_C__4AB81AF0" FromRole="Quejas" ToRole="Clientes" />
-          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Quejas__Departam__4D94879B" FromRole="Quejas" ToRole="Departamentos" />
-          <NavigationProperty Name="Estado" Relationship="Self.FK__Quejas__Estado_Q__4E88ABD4" FromRole="Quejas" ToRole="Estado" />
-          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Depar__5FB337D6" FromRole="Quejas" ToRole="Gestor_usuarios_quejas" />
-          <NavigationProperty Name="Gestor_usuarios_quejas1" Relationship="Self.FK__Gestor_us__Nombr__5EBF139D" FromRole="Quejas" ToRole="Gestor_usuarios_quejas" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Quejas__Tipo_Pro__4CA06362" FromRole="Quejas" ToRole="Producto" />
-          <NavigationProperty Name="Tipo_quejas1" Relationship="Self.FK__Quejas__Tipo_Que__4BAC3F29" FromRole="Quejas" ToRole="Tipo_quejas" />
-          <NavigationProperty Name="Usuarios_quejas" Relationship="Self.FK__Quejas__Usuario___6B24EA82" FromRole="Quejas" ToRole="Usuarios_quejas" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK__Quejas__Nombre_C__6FE99F9F" FromRole="Quejas" ToRole="Clientes" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Quejas__Departam__72C60C4A" FromRole="Quejas" ToRole="Departamentos" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK__Quejas__Estado_Q__73BA3083" FromRole="Quejas" ToRole="Estado" />
+          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Depar__7F2BE32F" FromRole="Quejas" ToRole="Gestor_usuarios_quejas" />
+          <NavigationProperty Name="Gestor_usuarios_quejas1" Relationship="Self.FK__Gestor_us__Nombr__7E37BEF6" FromRole="Quejas" ToRole="Gestor_usuarios_quejas" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Quejas__Tipo_Pro__71D1E811" FromRole="Quejas" ToRole="Producto" />
+          <NavigationProperty Name="Tipo_quejas1" Relationship="Self.FK__Quejas__Tipo_Que__70DDC3D8" FromRole="Quejas" ToRole="Tipo_quejas" />
+          <NavigationProperty Name="Usuarios_quejas" Relationship="Self.FK__Quejas__Usuario___0A9D95DB" FromRole="Quejas" ToRole="Usuarios_quejas" />
         </EntityType>
         <EntityType Name="Reclamaciones">
           <Key>
@@ -751,20 +753,20 @@
           <Property Name="Tipo_Producto" Type="Int32" Nullable="false" />
           <Property Name="Departamento_a_Reclamacion" Type="Int32" Nullable="false" />
           <Property Name="Usuario_Reclamo_Atendido" Type="Int32" Nullable="false" />
-          <Property Name="Fecha_Reclamacion" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Hora_Reclamacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fecha_Reclamacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora_Reclamacion" Type="Time" Nullable="false" Precision="7" />
           <Property Name="Departamento_Respuesta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Fecha_Respuesta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Estado_Reclamacion" Type="Int32" Nullable="false" />
           <Property Name="Comentarios_Reclamaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Clientes" Relationship="Self.FK__Reclamaci__Nombr__5165187F" FromRole="Reclamaciones" ToRole="Clientes" />
-          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Reclamaci__Depar__5441852A" FromRole="Reclamaciones" ToRole="Departamentos" />
-          <NavigationProperty Name="Estado" Relationship="Self.FK__Reclamaci__Estad__5535A963" FromRole="Reclamaciones" ToRole="Estado" />
-          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Depar__6754599E" FromRole="Reclamaciones" ToRole="Gestor_usuarios_reclamaciones" />
-          <NavigationProperty Name="Gestor_usuarios_reclamaciones1" Relationship="Self.FK__Gestor_us__Nombr__66603565" FromRole="Reclamaciones" ToRole="Gestor_usuarios_reclamaciones" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Reclamaci__Tipo___534D60F1" FromRole="Reclamaciones" ToRole="Producto" />
-          <NavigationProperty Name="Tipo_reclamacion1" Relationship="Self.FK__Reclamaci__Tipo___52593CB8" FromRole="Reclamaciones" ToRole="Tipo_reclamacion" />
-          <NavigationProperty Name="Usuarios_reclamaciones" Relationship="Self.FK__Reclamaci__Usuar__6C190EBB" FromRole="Reclamaciones" ToRole="Usuarios_reclamaciones" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK__Reclamaci__Nombr__76969D2E" FromRole="Reclamaciones" ToRole="Clientes" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Reclamaci__Depar__797309D9" FromRole="Reclamaciones" ToRole="Departamentos" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK__Reclamaci__Estad__7A672E12" FromRole="Reclamaciones" ToRole="Estado" />
+          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Depar__06CD04F7" FromRole="Reclamaciones" ToRole="Gestor_usuarios_reclamaciones" />
+          <NavigationProperty Name="Gestor_usuarios_reclamaciones1" Relationship="Self.FK__Gestor_us__Nombr__05D8E0BE" FromRole="Reclamaciones" ToRole="Gestor_usuarios_reclamaciones" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Reclamaci__Tipo___787EE5A0" FromRole="Reclamaciones" ToRole="Producto" />
+          <NavigationProperty Name="Tipo_reclamacion1" Relationship="Self.FK__Reclamaci__Tipo___778AC167" FromRole="Reclamaciones" ToRole="Tipo_reclamacion" />
+          <NavigationProperty Name="Usuarios_reclamaciones" Relationship="Self.FK__Reclamaci__Usuar__0B91BA14" FromRole="Reclamaciones" ToRole="Usuarios_reclamaciones" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -772,8 +774,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion_Rol" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_usua__Rol__60A75C0F" FromRole="Rol" ToRole="Gestor_usuarios_quejas" />
-          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_usua__Rol__68487DD7" FromRole="Rol" ToRole="Gestor_usuarios_reclamaciones" />
+          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_usua__Rol__00200768" FromRole="Rol" ToRole="Gestor_usuarios_quejas" />
+          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_usua__Rol__07C12930" FromRole="Rol" ToRole="Gestor_usuarios_reclamaciones" />
         </EntityType>
         <EntityType Name="Tipo_quejas">
           <Key>
@@ -783,7 +785,7 @@
           <Property Name="Descripción" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Estado1" Relationship="Self.FK__Tipo_quej__Estad__4222D4EF" FromRole="Tipo_quejas" ToRole="Estado" />
-          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Tipo_Que__4BAC3F29" FromRole="Tipo_quejas" ToRole="Quejas" />
+          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Tipo_Que__70DDC3D8" FromRole="Tipo_quejas" ToRole="Quejas" />
         </EntityType>
         <EntityType Name="Tipo_reclamacion">
           <Key>
@@ -793,7 +795,7 @@
           <Property Name="Descripción" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Estado1" Relationship="Self.FK__Tipo_recl__Estad__44FF419A" FromRole="Tipo_reclamacion" ToRole="Estado" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Tipo___52593CB8" FromRole="Tipo_reclamacion" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Tipo___778AC167" FromRole="Tipo_reclamacion" ToRole="Reclamaciones" />
         </EntityType>
         <EntityType Name="Usuarios_quejas">
           <Key>
@@ -802,8 +804,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Usuario_quejas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Clave" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Usuar__5DCAEF64" FromRole="Usuarios_quejas" ToRole="Gestor_usuarios_quejas" />
-          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Usuario___6B24EA82" FromRole="Usuarios_quejas" ToRole="Quejas" />
+          <NavigationProperty Name="Gestor_usuarios_quejas" Relationship="Self.FK__Gestor_us__Usuar__7D439ABD" FromRole="Usuarios_quejas" ToRole="Gestor_usuarios_quejas" />
+          <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Usuario___0A9D95DB" FromRole="Usuarios_quejas" ToRole="Quejas" />
         </EntityType>
         <EntityType Name="Usuarios_reclamaciones">
           <Key>
@@ -812,8 +814,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Usuario_reclamo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Clave" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Usuar__656C112C" FromRole="Usuarios_reclamaciones" ToRole="Gestor_usuarios_reclamaciones" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Usuar__6C190EBB" FromRole="Usuarios_reclamaciones" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Gestor_usuarios_reclamaciones" Relationship="Self.FK__Gestor_us__Usuar__04E4BC85" FromRole="Usuarios_reclamaciones" ToRole="Gestor_usuarios_reclamaciones" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Usuar__0B91BA14" FromRole="Usuarios_reclamaciones" ToRole="Reclamaciones" />
         </EntityType>
         <Association Name="FK__Clientes__Estado__47DBAE45">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
@@ -827,7 +829,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Nombre_C__4AB81AF0">
+        <Association Name="FK__Quejas__Nombre_C__6FE99F9F">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -839,7 +841,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Nombr__5165187F">
+        <Association Name="FK__Reclamaci__Nombr__76969D2E">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -851,7 +853,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Departam__4D94879B">
+        <Association Name="FK__Quejas__Departam__72C60C4A">
           <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -863,7 +865,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Depar__5441852A">
+        <Association Name="FK__Reclamaci__Depar__797309D9">
           <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -875,7 +877,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Estad__628FA481">
+        <Association Name="FK__Gestor_us__Estad__02084FDA">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -887,7 +889,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Estad__6A30C649">
+        <Association Name="FK__Gestor_us__Estad__09A971A2">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -911,7 +913,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Estado_Q__4E88ABD4">
+        <Association Name="FK__Quejas__Estado_Q__73BA3083">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -923,7 +925,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Estad__5535A963">
+        <Association Name="FK__Reclamaci__Estad__7A672E12">
           <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -959,7 +961,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Depar__5FB337D6">
+        <Association Name="FK__Gestor_us__Depar__7F2BE32F">
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -971,7 +973,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Nombr__5EBF139D">
+        <Association Name="FK__Gestor_us__Nombr__7E37BEF6">
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -983,7 +985,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Puest__619B8048">
+        <Association Name="FK__Gestor_us__Puest__01142BA1">
           <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -995,7 +997,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Usuar__5DCAEF64">
+        <Association Name="FK__Gestor_us__Usuar__7D439ABD">
           <End Role="Usuarios_quejas" Type="Self.Usuarios_quejas" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1007,7 +1009,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_usua__Rol__60A75C0F">
+        <Association Name="FK__Gestor_usua__Rol__00200768">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Gestor_usuarios_quejas" Type="Self.Gestor_usuarios_quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1019,7 +1021,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Depar__6754599E">
+        <Association Name="FK__Gestor_us__Depar__06CD04F7">
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1031,7 +1033,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Nombr__66603565">
+        <Association Name="FK__Gestor_us__Nombr__05D8E0BE">
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1043,7 +1045,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Puest__693CA210">
+        <Association Name="FK__Gestor_us__Puest__08B54D69">
           <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1055,7 +1057,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_us__Usuar__656C112C">
+        <Association Name="FK__Gestor_us__Usuar__04E4BC85">
           <End Role="Usuarios_reclamaciones" Type="Self.Usuarios_reclamaciones" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1067,7 +1069,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gestor_usua__Rol__68487DD7">
+        <Association Name="FK__Gestor_usua__Rol__07C12930">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Gestor_usuarios_reclamaciones" Type="Self.Gestor_usuarios_reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1079,7 +1081,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Tipo_Pro__4CA06362">
+        <Association Name="FK__Quejas__Tipo_Pro__71D1E811">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1091,7 +1093,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Tipo___534D60F1">
+        <Association Name="FK__Reclamaci__Tipo___787EE5A0">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1103,7 +1105,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Tipo_Que__4BAC3F29">
+        <Association Name="FK__Quejas__Tipo_Que__70DDC3D8">
           <End Role="Tipo_quejas" Type="Self.Tipo_quejas" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1115,7 +1117,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Quejas__Usuario___6B24EA82">
+        <Association Name="FK__Quejas__Usuario___0A9D95DB">
           <End Role="Usuarios_quejas" Type="Self.Usuarios_quejas" Multiplicity="1" />
           <End Role="Quejas" Type="Self.Quejas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1127,7 +1129,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Tipo___52593CB8">
+        <Association Name="FK__Reclamaci__Tipo___778AC167">
           <End Role="Tipo_reclamacion" Type="Self.Tipo_reclamacion" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1139,7 +1141,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Usuar__6C190EBB">
+        <Association Name="FK__Reclamaci__Usuar__0B91BA14">
           <End Role="Usuarios_reclamaciones" Type="Self.Usuarios_reclamaciones" Multiplicity="1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1170,27 +1172,27 @@
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Clientes" EntitySet="Clientes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Nombre_C__4AB81AF0" Association="Self.FK__Quejas__Nombre_C__4AB81AF0">
+          <AssociationSet Name="FK__Quejas__Nombre_C__6FE99F9F" Association="Self.FK__Quejas__Nombre_C__6FE99F9F">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Nombr__5165187F" Association="Self.FK__Reclamaci__Nombr__5165187F">
+          <AssociationSet Name="FK__Reclamaci__Nombr__76969D2E" Association="Self.FK__Reclamaci__Nombr__76969D2E">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Departam__4D94879B" Association="Self.FK__Quejas__Departam__4D94879B">
+          <AssociationSet Name="FK__Quejas__Departam__72C60C4A" Association="Self.FK__Quejas__Departam__72C60C4A">
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Depar__5441852A" Association="Self.FK__Reclamaci__Depar__5441852A">
+          <AssociationSet Name="FK__Reclamaci__Depar__797309D9" Association="Self.FK__Reclamaci__Depar__797309D9">
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Estad__628FA481" Association="Self.FK__Gestor_us__Estad__628FA481">
+          <AssociationSet Name="FK__Gestor_us__Estad__02084FDA" Association="Self.FK__Gestor_us__Estad__02084FDA">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Estad__6A30C649" Association="Self.FK__Gestor_us__Estad__6A30C649">
+          <AssociationSet Name="FK__Gestor_us__Estad__09A971A2" Association="Self.FK__Gestor_us__Estad__09A971A2">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
@@ -1198,11 +1200,11 @@
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Estado_Q__4E88ABD4" Association="Self.FK__Quejas__Estado_Q__4E88ABD4">
+          <AssociationSet Name="FK__Quejas__Estado_Q__73BA3083" Association="Self.FK__Quejas__Estado_Q__73BA3083">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Estad__5535A963" Association="Self.FK__Reclamaci__Estad__5535A963">
+          <AssociationSet Name="FK__Reclamaci__Estad__7A672E12" Association="Self.FK__Reclamaci__Estad__7A672E12">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
@@ -1214,67 +1216,67 @@
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Tipo_reclamacion" EntitySet="Tipo_reclamacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Depar__5FB337D6" Association="Self.FK__Gestor_us__Depar__5FB337D6">
+          <AssociationSet Name="FK__Gestor_us__Depar__7F2BE32F" Association="Self.FK__Gestor_us__Depar__7F2BE32F">
             <End Role="Quejas" EntitySet="Quejas" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Nombr__5EBF139D" Association="Self.FK__Gestor_us__Nombr__5EBF139D">
+          <AssociationSet Name="FK__Gestor_us__Nombr__7E37BEF6" Association="Self.FK__Gestor_us__Nombr__7E37BEF6">
             <End Role="Quejas" EntitySet="Quejas" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Puest__619B8048" Association="Self.FK__Gestor_us__Puest__619B8048">
+          <AssociationSet Name="FK__Gestor_us__Puest__01142BA1" Association="Self.FK__Gestor_us__Puest__01142BA1">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Usuar__5DCAEF64" Association="Self.FK__Gestor_us__Usuar__5DCAEF64">
+          <AssociationSet Name="FK__Gestor_us__Usuar__7D439ABD" Association="Self.FK__Gestor_us__Usuar__7D439ABD">
             <End Role="Usuarios_quejas" EntitySet="Usuarios_quejas" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_usua__Rol__60A75C0F" Association="Self.FK__Gestor_usua__Rol__60A75C0F">
+          <AssociationSet Name="FK__Gestor_usua__Rol__00200768" Association="Self.FK__Gestor_usua__Rol__00200768">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Gestor_usuarios_quejas" EntitySet="Gestor_usuarios_quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Depar__6754599E" Association="Self.FK__Gestor_us__Depar__6754599E">
+          <AssociationSet Name="FK__Gestor_us__Depar__06CD04F7" Association="Self.FK__Gestor_us__Depar__06CD04F7">
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Nombr__66603565" Association="Self.FK__Gestor_us__Nombr__66603565">
+          <AssociationSet Name="FK__Gestor_us__Nombr__05D8E0BE" Association="Self.FK__Gestor_us__Nombr__05D8E0BE">
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Puest__693CA210" Association="Self.FK__Gestor_us__Puest__693CA210">
+          <AssociationSet Name="FK__Gestor_us__Puest__08B54D69" Association="Self.FK__Gestor_us__Puest__08B54D69">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_us__Usuar__656C112C" Association="Self.FK__Gestor_us__Usuar__656C112C">
+          <AssociationSet Name="FK__Gestor_us__Usuar__04E4BC85" Association="Self.FK__Gestor_us__Usuar__04E4BC85">
             <End Role="Usuarios_reclamaciones" EntitySet="Usuarios_reclamaciones" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gestor_usua__Rol__68487DD7" Association="Self.FK__Gestor_usua__Rol__68487DD7">
+          <AssociationSet Name="FK__Gestor_usua__Rol__07C12930" Association="Self.FK__Gestor_usua__Rol__07C12930">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Gestor_usuarios_reclamaciones" EntitySet="Gestor_usuarios_reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Tipo_Pro__4CA06362" Association="Self.FK__Quejas__Tipo_Pro__4CA06362">
+          <AssociationSet Name="FK__Quejas__Tipo_Pro__71D1E811" Association="Self.FK__Quejas__Tipo_Pro__71D1E811">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Tipo___534D60F1" Association="Self.FK__Reclamaci__Tipo___534D60F1">
+          <AssociationSet Name="FK__Reclamaci__Tipo___787EE5A0" Association="Self.FK__Reclamaci__Tipo___787EE5A0">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Tipo_Que__4BAC3F29" Association="Self.FK__Quejas__Tipo_Que__4BAC3F29">
+          <AssociationSet Name="FK__Quejas__Tipo_Que__70DDC3D8" Association="Self.FK__Quejas__Tipo_Que__70DDC3D8">
             <End Role="Tipo_quejas" EntitySet="Tipo_quejas" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Quejas__Usuario___6B24EA82" Association="Self.FK__Quejas__Usuario___6B24EA82">
+          <AssociationSet Name="FK__Quejas__Usuario___0A9D95DB" Association="Self.FK__Quejas__Usuario___0A9D95DB">
             <End Role="Usuarios_quejas" EntitySet="Usuarios_quejas" />
             <End Role="Quejas" EntitySet="Quejas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Tipo___52593CB8" Association="Self.FK__Reclamaci__Tipo___52593CB8">
+          <AssociationSet Name="FK__Reclamaci__Tipo___778AC167" Association="Self.FK__Reclamaci__Tipo___778AC167">
             <End Role="Tipo_reclamacion" EntitySet="Tipo_reclamacion" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Usuar__6C190EBB" Association="Self.FK__Reclamaci__Usuar__6C190EBB">
+          <AssociationSet Name="FK__Reclamaci__Usuar__0B91BA14" Association="Self.FK__Reclamaci__Usuar__0B91BA14">
             <End Role="Usuarios_reclamaciones" EntitySet="Usuarios_reclamaciones" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
@@ -1303,6 +1305,7 @@
           <EntitySetMapping Name="Departamentos">
             <EntityTypeMapping TypeName="GestionQRModel.Departamentos">
               <MappingFragment StoreEntitySet="Departamentos">
+                <ScalarProperty Name="Nombre_Departamento" ColumnName="Nombre_Departamento" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="tipo_departamento" ColumnName="tipo_departamento" />
                 <ScalarProperty Name="encargado_departamento" ColumnName="encargado_departamento" />

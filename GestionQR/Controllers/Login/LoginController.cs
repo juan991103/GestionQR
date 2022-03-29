@@ -35,7 +35,7 @@ namespace SistemaRH.Controllers
             {
                 db.Clientes.Add(clientes);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Seleccion", "Login");
             }
 
             ViewBag.Estado = new SelectList(db.Estado, "Id", "Descripcion", clientes.Estado);
@@ -67,7 +67,7 @@ namespace SistemaRH.Controllers
                     {
                         Session["Id"] = obj.Id.ToString();
                         Session["Usuario_quejas"] = obj.Usuario_quejas.ToString();
-                        return RedirectToAction("Index", "UsuariosQ");
+                        return RedirectToAction("Index", "QuejasEdit");
                     }
                 }
             }
@@ -93,7 +93,7 @@ namespace SistemaRH.Controllers
                     {
                         Session["Id"] = obj2.Id.ToString();
                         Session["Usuario_reclamo"] = obj2.Usuario_reclamo.ToString();
-                        return RedirectToAction("Index", "UsuariosR");
+                        return RedirectToAction("Index", "ReclamacionesEdit");
                     }
                 }
             }

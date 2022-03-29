@@ -17,8 +17,15 @@ namespace GestionQR.Controllers.Usuarios
         // GET: QuejasEdit
         public ActionResult Index()
         {
-            var quejas = db.Quejas.Include(q => q.Clientes).Include(q => q.Departamentos).Include(q => q.Estado).Include(q => q.Producto).Include(q => q.Tipo_quejas1).Include(q => q.Usuarios_quejas);
-            return View(quejas.ToList());
+            if (Session["Id"] != null)
+            {
+                var quejas = db.Quejas.Include(q => q.Clientes).Include(q => q.Departamentos).Include(q => q.Estado).Include(q => q.Producto).Include(q => q.Tipo_quejas1).Include(q => q.Usuarios_quejas);
+                return View(quejas.ToList());
+            }
+            else
+            {
+                return RedirectToAction("LoginQuejas", "Login");
+            }
         }
 
         // GET: QuejasEdit/Details/5

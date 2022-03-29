@@ -17,8 +17,15 @@ namespace GestionQR.Controllers.Usuarios
         // GET: ReclamacionesEdit
         public ActionResult Index()
         {
-            var reclamaciones = db.Reclamaciones.Include(r => r.Clientes).Include(r => r.Departamentos).Include(r => r.Estado).Include(r => r.Producto).Include(r => r.Tipo_reclamacion1).Include(r => r.Usuarios_reclamaciones);
-            return View(reclamaciones.ToList());
+            if (Session["Id"] != null)
+            {
+                var reclamaciones = db.Reclamaciones.Include(r => r.Clientes).Include(r => r.Departamentos).Include(r => r.Estado).Include(r => r.Producto).Include(r => r.Tipo_reclamacion1).Include(r => r.Usuarios_reclamaciones);
+                return View(reclamaciones.ToList());
+            }
+            else
+            {
+                return RedirectToAction("LoginReclamaciones", "Login");
+            }
         }
 
         // GET: ReclamacionesEdit/Details/5

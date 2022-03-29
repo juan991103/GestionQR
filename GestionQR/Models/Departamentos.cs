@@ -24,6 +24,7 @@ namespace GestionQR.Models
         public int id { get; set; }
         public long tipo_departamento { get; set; }
         public string encargado_departamento { get; set; }
+        public string Nombre_Departamento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Quejas> Quejas { get; set; }
