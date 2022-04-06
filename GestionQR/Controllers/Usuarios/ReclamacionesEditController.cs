@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using GestionQR.Models;
@@ -26,6 +27,25 @@ namespace GestionQR.Controllers.Usuarios
             {
                 return RedirectToAction("LoginReclamaciones", "Login");
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(DateTime start, DateTime end)
+        {
+            var nombres = from s in db.Reclamaciones
+                          select s;
+
+            if (start == null || end == null)
+            {
+                return View();
+            }
+            else
+            {
+                nombres = nombres.Where(s => s.Fecha_Reclamacion >= start && s.Fecha_Reclamacion <= end);
+            }
+
+            return View(nombres.AsNoTracking().ToListAsync());
         }
 
         // GET: ReclamacionesEdit/Details/5
@@ -84,6 +104,13 @@ namespace GestionQR.Controllers.Usuarios
             ViewBag.Tipo_Reclamacion = new SelectList(db.Tipo_reclamacion, "Id", "Descripción", reclamaciones.Tipo_Reclamacion);
             ViewBag.Usuario_Reclamo_Atendido = new SelectList(db.Usuarios_reclamaciones, "Id", "Usuario_reclamo", reclamaciones.Usuario_Reclamo_Atendido);
             return View(reclamaciones);
+        }
+
+        [HttpPost]
+        [System.Web.Mvc.ValidateInput(false)]
+        public FileResult Export(string GridHtml)
+        {
+            return File(Encoding.ASCII.GetBytes(GridHtml), "application/vnd.ms-excel", "Reporte de Reclamaciones - QrProjectManager.xls");
         }
 
         protected override void Dispose(bool disposing)

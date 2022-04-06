@@ -88,8 +88,8 @@
           <Property Name="Usuario_Quejas_Atendido" Type="int" Nullable="false" />
           <Property Name="Fecha_Queja" Type="date" Nullable="false" />
           <Property Name="Hora_Queja" Type="time" Precision="7" Nullable="false" />
-          <Property Name="Departamento_Respuesta" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="Fecha_Respuesta" Type="datetime" Nullable="false" />
+          <Property Name="Departamento_Respuesta" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_Respuesta" Type="date" />
           <Property Name="Estado_Quejas" Type="int" Nullable="false" />
           <Property Name="Comentarios_Queja" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
@@ -105,8 +105,8 @@
           <Property Name="Usuario_Reclamo_Atendido" Type="int" Nullable="false" />
           <Property Name="Fecha_Reclamacion" Type="date" Nullable="false" />
           <Property Name="Hora_Reclamacion" Type="time" Precision="7" Nullable="false" />
-          <Property Name="Departamento_Respuesta" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Fecha_Respuesta" Type="datetime" Nullable="false" />
+          <Property Name="Departamento_Respuesta" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_Respuesta" Type="date" />
           <Property Name="Estado_Reclamacion" Type="int" Nullable="false" />
           <Property Name="Comentarios_Reclamaciones" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -641,9 +641,9 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tipo_departamento" Type="Int64" Nullable="false" />
           <Property Name="encargado_departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre_Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Quejas" Relationship="Self.FK__Quejas__Departam__72C60C4A" FromRole="Departamentos" ToRole="Quejas" />
           <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Depar__797309D9" FromRole="Departamentos" ToRole="Reclamaciones" />
-          <Property Name="Nombre_Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -730,8 +730,8 @@
           <Property Name="Usuario_Quejas_Atendido" Type="Int32" Nullable="false" />
           <Property Name="Fecha_Queja" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Hora_Queja" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="Departamento_Respuesta" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Fecha_Respuesta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Departamento_Respuesta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="Fecha_Respuesta" Type="DateTime" Precision="0" />
           <Property Name="Estado_Quejas" Type="Int32" Nullable="false" />
           <Property Name="Comentarios_Queja" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Clientes" Relationship="Self.FK__Quejas__Nombre_C__6FE99F9F" FromRole="Quejas" ToRole="Clientes" />
@@ -755,8 +755,8 @@
           <Property Name="Usuario_Reclamo_Atendido" Type="Int32" Nullable="false" />
           <Property Name="Fecha_Reclamacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Hora_Reclamacion" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="Departamento_Respuesta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Fecha_Respuesta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Departamento_Respuesta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Respuesta" Type="DateTime" Precision="0" />
           <Property Name="Estado_Reclamacion" Type="Int32" Nullable="false" />
           <Property Name="Comentarios_Reclamaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Clientes" Relationship="Self.FK__Reclamaci__Nombr__76969D2E" FromRole="Reclamaciones" ToRole="Clientes" />
@@ -1305,10 +1305,10 @@
           <EntitySetMapping Name="Departamentos">
             <EntityTypeMapping TypeName="GestionQRModel.Departamentos">
               <MappingFragment StoreEntitySet="Departamentos">
-                <ScalarProperty Name="Nombre_Departamento" ColumnName="Nombre_Departamento" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="tipo_departamento" ColumnName="tipo_departamento" />
                 <ScalarProperty Name="encargado_departamento" ColumnName="encargado_departamento" />
+                <ScalarProperty Name="Nombre_Departamento" ColumnName="Nombre_Departamento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

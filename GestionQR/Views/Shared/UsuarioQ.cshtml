@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="~/Content/assets/css/fullcalendar.css" />
     <link rel="stylesheet" href="~/Content/assets/css/fullcalendar.css" />
     <link rel="stylesheet" href="~/Content/assets/css/main.css" />
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
 </head>
 <body>
     <aside class="sidebar-nav-wrapper">
@@ -39,10 +44,7 @@
                         <span class="text">Principal</span>
                     </a>
                     <ul id="ddmenu_1" class="collapse show dropdown-nav">
-                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                         <li>@Html.ActionLink("Quejas", "Index", "QuejasEdit")</li>
-                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     </ul>
                 </li>                
             </ul>
@@ -211,23 +213,7 @@
                                 <ul class="dropdown-menu dropdown-menu-end"
                                     aria-labelledby="profile">
                                     <li>
-                                        <a href="#0">
-                                            <i class="lni lni-user"></i> View Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">
-                                            <i class="lni lni-alarm"></i> Notifications
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
-                                    </li>
-                                    <li>
-                                        <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                                        <a href="@Url.Action("LoginQuejas", "Login", new { target = "_blank" })"> <i class="lni lni-exit"></i> Cerrar Sesion </a>
                                     </li>
                                 </ul>
                             </div>

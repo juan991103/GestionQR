@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using GestionQR.Models;
@@ -26,6 +27,25 @@ namespace GestionQR.Controllers.Usuarios
             {
                 return RedirectToAction("LoginQuejas", "Login");
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(DateTime start, DateTime end)
+        {
+            var nombres = from s in db.Quejas
+                          select s;
+           
+            if (start == null || end == null)
+            {
+                return View();
+            }
+            else
+            {
+                nombres = nombres.Where(s => s.Fecha_Queja >= start && s.Fecha_Queja <= end);
+            }
+
+            return View(nombres.AsNoTracking().ToListAsync());
         }
 
         // GET: QuejasEdit/Details/5
@@ -86,6 +106,12 @@ namespace GestionQR.Controllers.Usuarios
             return View(quejas);
         }
 
+        [HttpPost]
+        [System.Web.Mvc.ValidateInput(false)]
+        public FileResult Export(string GridHtml)
+        {
+            return File(Encoding.ASCII.GetBytes(GridHtml), "application/vnd.ms-excel", "Reporte de Quejas - QrProjectManager.xls");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

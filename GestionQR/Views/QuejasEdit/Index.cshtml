@@ -5,87 +5,144 @@
     Layout = "~/Views/Shared/UsuarioQ.cshtml";
 }
 
-<h2>Index</h2>
+<script type="text/javascript">
+    function preventBack() { window.history.forward(); }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha_Queja)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hora_Queja)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departamento_Respuesta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha_Respuesta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comentarios_Queja)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departamentos.encargado_departamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Producto.Tipo_Producto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_quejas1.Descripción)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuarios_quejas.Usuario_quejas)
-        </th>
-        <th></th>
-    </tr>
+    window.onpopstate = function () {
+        history.forward(1);
+    };
+</script>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Queja)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora_Queja)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Departamento_Respuesta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Respuesta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comentarios_Queja)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Departamentos.encargado_departamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producto.Tipo_Producto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo_quejas1.Descripción)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuarios_quejas.Usuario_quejas)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+<div class="text-center">
+    <h2>Quejas disponibles</h2>
+</div>
+
+<br />
+<br />
+
+@using (Html.BeginForm("Index", "QuejasEdit", FormMethod.Post))
+{
+    <div class="form-actions no-color d-flex justify-content-between">
+        <input type="date" name="start" value="" class="form-control" placeholder="Fecha desde...">
+        <input type="date" name="end" value="" class="form-control" placeholder="Fecha hasta...">
+        <input type="submit" value="Buscar" class="btn btn-outline-success form-control" />
+    </div>
 }
 
-</table>
+@using (Html.BeginForm("Export", "QuejasEdit", FormMethod.Post))
+{
+    <input type="hidden" name="GridHtml" />
+    <input type="submit" id="btnSubmit" class="btn btn-outline-success form-control" value="Realizar reporte y exportar..." />
+}
+
+<div class="table-responsive" id="Grid">
+    <div class="text-success">
+        <h4 id="myH4" class="card-title">Reporte de clientes con quejas - GestionQR</h4>
+        <a id="myH42">Generado a las </a><a id="date"></a>
+        <br><br>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Queja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora_Queja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento_Respuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Respuesta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentarios_Queja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamentos.encargado_departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto.Tipo_Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo_quejas1.Descripción)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuarios_quejas.Usuario_quejas)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_Queja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora_Queja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento_Respuesta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_Respuesta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comentarios_Queja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamentos.encargado_departamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Tipo_Producto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo_quejas1.Descripción)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuarios_quejas.Usuario_quejas)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {
+            $("input[name='GridHtml']").val($("#Grid").html());
+        });
+    });
+    document.getElementById("myH4").style.display = "none";
+    document.getElementById("myH42").style.display = "none";
+
+    n = new Date();
+    hr = n.getHours();
+    mn = n.getMinutes();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById("date").innerHTML = hr + ":" + mn + ", en la fecha " + d + " del mes " + m + ", " + y + ".";
+    document.getElementById("date").style.display = "none"
+</script>

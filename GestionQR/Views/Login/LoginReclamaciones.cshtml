@@ -5,6 +5,12 @@
     Layout = "~/Views/Shared/Login.cshtml";
 }
 
+<script type="text/javascript">
+    function preventBack() { window.history.forward(); }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+</script>
+
 <h1>QR Project Manager</h1>
 
 <h3 class="active">Inicie Sesion para gestionar las reclamaciones</h3>

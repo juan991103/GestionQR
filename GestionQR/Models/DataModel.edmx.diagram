@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="04747a09bf1345a0b569f8241ab655a6" Name="Diagram1">
+      <Diagram DiagramId="7f580b7e943b469c96a6a500b9aeee2f" Name="Diagram1">
         <EntityTypeShape EntityType="GestionQRModel.Clientes" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GestionQRModel.Departamentos" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GestionQRModel.Departamentos" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionQRModel.Estado" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionQRModel.Gestor_usuarios_quejas" Width="1.5" PointX="10.5" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="GestionQRModel.Gestor_usuarios_reclamaciones" Width="1.5" PointX="13.5" PointY="9.5" IsExpanded="true" />

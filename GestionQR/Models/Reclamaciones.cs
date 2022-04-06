@@ -11,7 +11,8 @@ namespace GestionQR.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Reclamaciones
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,13 +28,18 @@ namespace GestionQR.Models
         public int Tipo_Producto { get; set; }
         public int Departamento_a_Reclamacion { get; set; }
         public int Usuario_Reclamo_Atendido { get; set; }
+        [Required(ErrorMessage = "Elige la fecha")]
+        [DataType(DataType.Date)]
         public System.DateTime Fecha_Reclamacion { get; set; }
+        [Required(ErrorMessage = "Elige la hora")]
+        [DataType(DataType.Time)]
         public System.TimeSpan Hora_Reclamacion { get; set; }
         public string Departamento_Respuesta { get; set; }
+        [DataType(DataType.Date)]
         public System.DateTime Fecha_Respuesta { get; set; }
         public int Estado_Reclamacion { get; set; }
-        public string Comentarios_Reclamaciones { get; set; }
-    
+        [Required(ErrorMessage = "Campo obligatorio")]
+        public string Comentarios_Reclamaciones { get; set; }    
         public virtual Clientes Clientes { get; set; }
         public virtual Departamentos Departamentos { get; set; }
         public virtual Estado Estado { get; set; }
