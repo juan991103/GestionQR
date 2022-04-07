@@ -6,19 +6,17 @@ namespace GestionQR.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Estado")]
-    public partial class Estado
+    public partial class Estado2
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Estado()
+        public Estado2()
         {
-            Clientes = new HashSet<Clientes>();
-            Departamentos = new HashSet<Departamentos>();
-            Producto = new HashSet<Producto>();
-            Quejas = new HashSet<Quejas>();
-            Reclamaciones = new HashSet<Reclamaciones>();
-            Tipo_quejas = new HashSet<Tipo_quejas>();
-            Tipo_reclamacion = new HashSet<Tipo_reclamacion>();
+            EncuestaSatisfaccion1 = new HashSet<EncuestaSatisfaccion1>();
+            EncuestaSatisfaccion11 = new HashSet<EncuestaSatisfaccion1>();
+            EncuestaSatisfaccion12 = new HashSet<EncuestaSatisfaccion1>();
+            EncuestaSatisfaccion13 = new HashSet<EncuestaSatisfaccion1>();
+            EncuestaSatisfaccion14 = new HashSet<EncuestaSatisfaccion1>();
+            EncuestaSatisfaccion15 = new HashSet<EncuestaSatisfaccion1>();
         }
 
         public int Id { get; set; }
@@ -28,24 +26,21 @@ namespace GestionQR.Models
         public string Descripcion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Clientes> Clientes { get; set; }
+        public virtual ICollection<EncuestaSatisfaccion1> EncuestaSatisfaccion1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Departamentos> Departamentos { get; set; }
+        public virtual ICollection<EncuestaSatisfaccion1> EncuestaSatisfaccion11 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto> Producto { get; set; }
+        public virtual ICollection<EncuestaSatisfaccion1> EncuestaSatisfaccion12 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Quejas> Quejas { get; set; }
+        public virtual ICollection<EncuestaSatisfaccion1> EncuestaSatisfaccion13 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reclamaciones> Reclamaciones { get; set; }
+        public virtual ICollection<EncuestaSatisfaccion1> EncuestaSatisfaccion14 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tipo_quejas> Tipo_quejas { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tipo_reclamacion> Tipo_reclamacion { get; set; }
+        public virtual ICollection<EncuestaSatisfaccion1> EncuestaSatisfaccion15 { get; set; }
     }
 }

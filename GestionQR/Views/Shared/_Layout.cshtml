@@ -89,13 +89,11 @@
                                 <path d="M13.75 4.58325H16.5L15.125 6.41659L13.75 4.58325ZM4.58333 1.83325H17.4167C18.4342 1.83325 19.25 2.65825 19.25 3.66659V18.3333C19.25 19.3508 18.4342 20.1666 17.4167 20.1666H4.58333C3.575 20.1666 2.75 19.3508 2.75 18.3333V3.66659C2.75 2.65825 3.575 1.83325 4.58333 1.83325ZM4.58333 3.66659V7.33325H17.4167V3.66659H4.58333ZM4.58333 18.3333H17.4167V9.16659H4.58333V18.3333ZM6.41667 10.9999H15.5833V12.8333H6.41667V10.9999ZM6.41667 14.6666H15.5833V16.4999H6.41667V14.6666Z" />
                             </svg>
                         </span>
-                        <span class="text"> Forms </span>
+                        <span class="text"> Gestion </span>
                     </a>
                     <ul id="ddmenu_5" class="collapse dropdown-nav">
                         <li>@Html.ActionLink("Tipos de Quejas", "Index", "TipoQuejas")</li>
                         <li>@Html.ActionLink("Tipos de Reclamaciones", "Index", "TipoReclamacion")</li>
-                        <li>@Html.ActionLink("Gestionar Quejas", "Index", "GestorUsuariosQuejas")</li>
-                        <li>@Html.ActionLink("Gestionar Reclamaciones", "Index", "GestorUsuariosReclamaciones")</li>
                         <li>@Html.ActionLink("Usuarios para Quejas", "Index", "UsuariosQuejas")</li>
                         <li>@Html.ActionLink("Usuarios para Reclamaciones", "Index", "UsuariosReclamaciones")</li>
                         <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
@@ -118,15 +116,11 @@
                                 <path d="M12.9067 14.2908L15.2808 11.9167H6.41667V10.0833H15.2808L12.9067 7.70917L14.2083 6.41667L18.7917 11L14.2083 15.5833L12.9067 14.2908ZM17.4167 2.75C17.9029 2.75 18.3692 2.94315 18.713 3.28697C19.0568 3.63079 19.25 4.0971 19.25 4.58333V8.86417L17.4167 7.03083V4.58333H4.58333V17.4167H17.4167V14.9692L19.25 13.1358V17.4167C19.25 17.9029 19.0568 18.3692 18.713 18.713C18.3692 19.0568 17.9029 19.25 17.4167 19.25H4.58333C3.56583 19.25 2.75 18.425 2.75 17.4167V4.58333C2.75 3.56583 3.56583 2.75 4.58333 2.75H17.4167Z" />
                             </svg>
                         </span>
-                        <span class="text">Auth</span>
+                        <span class="text">Encuesta de satisfaccion</span>
                     </a>
                     <ul id="ddmenu_3" class="collapse dropdown-nav">
-                        <li>
-                            <a href="signin.html"> Sign In </a>
-                        </li>
-                        <li>
-                            <a href="signup.html"> Sign Up </a>
-                        </li>
+                        <li>@Html.ActionLink("Ver respondidas", "Index", "EncuestaSatisfaccion1")</li>
+                        <li>@Html.ActionLink("Gestionar Estados", "Index", "Estado2")</li>
                     </ul>
                 </li>
                 <span class="divider"><hr /></span>

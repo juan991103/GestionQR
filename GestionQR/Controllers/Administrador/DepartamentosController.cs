@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using GestionQR.Models;
 
-namespace GestionQR.Controllers.Administrador
+namespace GestionQR.Controllers
 {
     public class DepartamentosController : Controller
     {

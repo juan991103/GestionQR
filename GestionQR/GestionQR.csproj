@@ -340,10 +340,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Administrador\ClientesController.cs" />
-    <Compile Include="Controllers\Administrador\DepartamentosController.cs" />
     <Compile Include="Controllers\Administrador\EstadosController.cs" />
-    <Compile Include="Controllers\Administrador\GestorUsuariosQuejasController.cs" />
-    <Compile Include="Controllers\Administrador\GestorUsuariosReclamacionesController.cs" />
     <Compile Include="Controllers\Administrador\ProductosController.cs" />
     <Compile Include="Controllers\Administrador\PuestosController.cs" />
     <Compile Include="Controllers\Administrador\QuejasController.cs" />
@@ -353,6 +350,7 @@
     <Compile Include="Controllers\Administrador\TipoReclamacionController.cs" />
     <Compile Include="Controllers\Administrador\UsuariosQuejasController.cs" />
     <Compile Include="Controllers\Administrador\UsuariosReclamacionesController.cs" />
+    <Compile Include="Controllers\Administrador\DepartamentosController.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Usuarios\QuejasEditController.cs" />
@@ -360,63 +358,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Clientes.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Departamentos.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Estado.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gestor_usuarios_quejas.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gestor_usuarios_reclamaciones.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Producto.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Puesto.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Quejas.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Reclamaciones.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Rol.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tipo_quejas.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tipo_reclamacion.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usuarios_quejas.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usuarios_reclamaciones.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Clientes.cs" />
+    <Compile Include="Models\Departamentos.cs" />
+    <Compile Include="Models\EncuestaSatisfaccion1.cs" />
+    <Compile Include="Models\Estado.cs" />
+    <Compile Include="Models\Estado2.cs" />
+    <Compile Include="Models\GestionQREntities.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Puesto.cs" />
+    <Compile Include="Models\Quejas.cs" />
+    <Compile Include="Models\Reclamaciones.cs" />
+    <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\Tipo_quejas.cs" />
+    <Compile Include="Models\Tipo_reclamacion.cs" />
+    <Compile Include="Models\Usuarios_quejas.cs" />
+    <Compile Include="Models\Usuarios_reclamaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -496,16 +452,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\DataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\DataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\.DS_Store" />
@@ -560,13 +506,6 @@
     <Content Include="Content\assets\scss\_mixin.scss" />
     <Content Include="Content\assets\scss\_sidebar.scss" />
     <Content Include="Content\assets\scss\_variables.scss" />
-    <EntityDeploy Include="Models\DataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -605,26 +544,11 @@
     <Content Include="Views\Clientes\Details.cshtml" />
     <Content Include="Views\Clientes\Edit.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
-    <Content Include="Views\Departamentos\Create.cshtml" />
-    <Content Include="Views\Departamentos\Delete.cshtml" />
-    <Content Include="Views\Departamentos\Details.cshtml" />
-    <Content Include="Views\Departamentos\Edit.cshtml" />
-    <Content Include="Views\Departamentos\Index.cshtml" />
     <Content Include="Views\Estados\Create.cshtml" />
     <Content Include="Views\Estados\Delete.cshtml" />
     <Content Include="Views\Estados\Details.cshtml" />
     <Content Include="Views\Estados\Edit.cshtml" />
     <Content Include="Views\Estados\Index.cshtml" />
-    <Content Include="Views\GestorUsuariosQuejas\Create.cshtml" />
-    <Content Include="Views\GestorUsuariosQuejas\Delete.cshtml" />
-    <Content Include="Views\GestorUsuariosQuejas\Details.cshtml" />
-    <Content Include="Views\GestorUsuariosQuejas\Edit.cshtml" />
-    <Content Include="Views\GestorUsuariosQuejas\Index.cshtml" />
-    <Content Include="Views\GestorUsuariosReclamaciones\Create.cshtml" />
-    <Content Include="Views\GestorUsuariosReclamaciones\Delete.cshtml" />
-    <Content Include="Views\GestorUsuariosReclamaciones\Details.cshtml" />
-    <Content Include="Views\GestorUsuariosReclamaciones\Edit.cshtml" />
-    <Content Include="Views\GestorUsuariosReclamaciones\Index.cshtml" />
     <Content Include="Views\Productos\Create.cshtml" />
     <Content Include="Views\Productos\Delete.cshtml" />
     <Content Include="Views\Productos\Details.cshtml" />
@@ -660,16 +584,6 @@
     <Content Include="Views\TipoReclamacion\Details.cshtml" />
     <Content Include="Views\TipoReclamacion\Edit.cshtml" />
     <Content Include="Views\TipoReclamacion\Index.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Create.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Delete.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Details.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Edit.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Index.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Create.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Delete.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Details.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
     <Content Include="Views\Shared\UsuarioR.cshtml" />
     <Content Include="Views\Shared\UsuarioQ.cshtml" />
     <Content Include="Views\QuejasEdit\Index.cshtml" />
@@ -680,6 +594,21 @@
     <Content Include="Views\ReclamacionesEdit\Index.cshtml" />
     <Content Include="Views\Login\LoginQuejas.cshtml" />
     <Content Include="Views\Login\LoginReclamaciones.cshtml" />
+    <Content Include="Views\Departamentos\Create.cshtml" />
+    <Content Include="Views\Departamentos\Delete.cshtml" />
+    <Content Include="Views\Departamentos\Details.cshtml" />
+    <Content Include="Views\Departamentos\Edit.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Create.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Delete.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Details.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Edit.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Index.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Create.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Delete.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Details.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
