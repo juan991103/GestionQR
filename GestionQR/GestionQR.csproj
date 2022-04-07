@@ -596,11 +596,6 @@
     <Content Include="Views\UsuariosReclamaciones\Details.cshtml" />
     <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
     <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
-    <Content Include="Views\EncuestaSatisfaccion\Create.cshtml" />
-    <Content Include="Views\EncuestaSatisfaccion\Delete.cshtml" />
-    <Content Include="Views\EncuestaSatisfaccion\Details.cshtml" />
-    <Content Include="Views\EncuestaSatisfaccion\Edit.cshtml" />
-    <Content Include="Views\EncuestaSatisfaccion\Index.cshtml" />
     <Content Include="Views\Estados2\Create.cshtml" />
     <Content Include="Views\Estados2\Delete.cshtml" />
     <Content Include="Views\Estados2\Details.cshtml" />
@@ -622,6 +617,11 @@
     <Content Include="Views\Reclamaciones\Details.cshtml" />
     <Content Include="Views\Reclamaciones\Edit.cshtml" />
     <Content Include="Views\Reclamaciones\Index.cshtml" />
+    <Content Include="Views\EncuestaSatisfaccion\Create.cshtml" />
+    <Content Include="Views\EncuestaSatisfaccion\Delete.cshtml" />
+    <Content Include="Views\EncuestaSatisfaccion\Details.cshtml" />
+    <Content Include="Views\EncuestaSatisfaccion\Edit.cshtml" />
+    <Content Include="Views\EncuestaSatisfaccion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

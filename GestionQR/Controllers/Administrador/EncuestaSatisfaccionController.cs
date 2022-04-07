@@ -46,7 +46,7 @@ namespace GestionQR.Controllers.Administrador
             ViewBag.Pregunta4 = new SelectList(db.Estado2, "Id", "Descripcion");
             ViewBag.Pregunta5 = new SelectList(db.Estado2, "Id", "Descripcion");
             ViewBag.Pregunta6 = new SelectList(db.Estado2, "Id", "Descripcion");
-            return View("Index", "EncuestaSatisfaccion");
+            return View();
         }
 
         // POST: EncuestaSatisfaccion/Create
