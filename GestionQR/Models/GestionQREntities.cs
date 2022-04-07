@@ -8,7 +8,7 @@ namespace GestionQR.Models
     public partial class GestionQREntities : DbContext
     {
         public GestionQREntities()
-            : base("name=GestionQREntities")
+            : base("name=GestionQREntities1")
         {
         }
 

@@ -1,11 +1,11 @@
-﻿@model IEnumerable<GestionQR.Models.Usuarios_quejas>
+﻿@model IEnumerable<GestionQR.Models.Estado2>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Gestionar usuarios con acceso a modificar las quejas</h2>
+<h2>Estados de satisfaccion</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,10 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Usuario_quejas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Clave)
+            @Html.DisplayNameFor(model => model.Descripcion)
         </th>
         <th></th>
     </tr>
@@ -24,10 +21,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Usuario_quejas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clave)
+            @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

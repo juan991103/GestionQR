@@ -1,0 +1,75 @@
+﻿@model GestionQR.Models.EncuestaSatisfaccion1
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EncuestaSatisfaccion1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.Nombres_Cliente)
+        </dd>
+
+        <dt>
+            ¿Como calificas nuestro servicio?
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado2.Descripcion)
+        </dd>
+
+        <dt>
+            Atencion prestada oportuna y a tiempo:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado21.Descripcion)
+        </dd>
+
+        <dt>
+            Horarios de atencion adecuada y respetuosa:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado22.Descripcion)
+        </dd>
+
+        <dt>
+            Respuesta inmediata a las dudas:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado23.Descripcion)
+        </dd>
+
+        <dt>
+            Comportamiento del personal en una imagen de honestidad y confianza:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado24.Descripcion)
+        </dd>
+
+        <dt>
+            Resolucion de las dudas presentadas:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado25.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

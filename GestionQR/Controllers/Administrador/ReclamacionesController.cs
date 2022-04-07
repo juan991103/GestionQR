@@ -40,7 +40,7 @@ namespace GestionQR.Controllers.Administrador
         public ActionResult Create()
         {
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente");
-            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "encargado_departamento");
+            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "Nombre_departamento");
             ViewBag.Estado_Reclamacion = new SelectList(db.Estado, "Id", "Descripcion");
             ViewBag.Tipo_Producto = new SelectList(db.Producto, "Id", "Tipo_Producto");
             ViewBag.Tipo_Reclamacion = new SelectList(db.Tipo_reclamacion, "Id", "Descripción");
@@ -63,7 +63,7 @@ namespace GestionQR.Controllers.Administrador
             }
 
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", reclamaciones.Nombre_Cliente);
-            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "encargado_departamento", reclamaciones.Departamento_a_Reclamacion);
+            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "Nombre_departamento", reclamaciones.Departamento_a_Reclamacion);
             ViewBag.Estado_Reclamacion = new SelectList(db.Estado, "Id", "Descripcion", reclamaciones.Estado_Reclamacion);
             ViewBag.Tipo_Producto = new SelectList(db.Producto, "Id", "Tipo_Producto", reclamaciones.Tipo_Producto);
             ViewBag.Tipo_Reclamacion = new SelectList(db.Tipo_reclamacion, "Id", "Descripción", reclamaciones.Tipo_Reclamacion);
@@ -84,7 +84,7 @@ namespace GestionQR.Controllers.Administrador
                 return HttpNotFound();
             }
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", reclamaciones.Nombre_Cliente);
-            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "encargado_departamento", reclamaciones.Departamento_a_Reclamacion);
+            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "Nombre_departamento", reclamaciones.Departamento_a_Reclamacion);
             ViewBag.Estado_Reclamacion = new SelectList(db.Estado, "Id", "Descripcion", reclamaciones.Estado_Reclamacion);
             ViewBag.Tipo_Producto = new SelectList(db.Producto, "Id", "Tipo_Producto", reclamaciones.Tipo_Producto);
             ViewBag.Tipo_Reclamacion = new SelectList(db.Tipo_reclamacion, "Id", "Descripción", reclamaciones.Tipo_Reclamacion);
@@ -106,7 +106,7 @@ namespace GestionQR.Controllers.Administrador
                 return RedirectToAction("Index");
             }
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", reclamaciones.Nombre_Cliente);
-            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "encargado_departamento", reclamaciones.Departamento_a_Reclamacion);
+            ViewBag.Departamento_a_Reclamacion = new SelectList(db.Departamentos, "id", "Nombre_departamento", reclamaciones.Departamento_a_Reclamacion);
             ViewBag.Estado_Reclamacion = new SelectList(db.Estado, "Id", "Descripcion", reclamaciones.Estado_Reclamacion);
             ViewBag.Tipo_Producto = new SelectList(db.Producto, "Id", "Tipo_Producto", reclamaciones.Tipo_Producto);
             ViewBag.Tipo_Reclamacion = new SelectList(db.Tipo_reclamacion, "Id", "Descripción", reclamaciones.Tipo_Reclamacion);

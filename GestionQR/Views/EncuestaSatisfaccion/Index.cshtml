@@ -1,0 +1,103 @@
+﻿@model IEnumerable<GestionQR.Models.EncuestaSatisfaccion1>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Respuestas de la Encuesta de Satisfaccion</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Clientes
+        </th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
+            </td>
+        }
+    </tr>
+    <tr>
+        <th>
+            ¿Como calificas nuestro servicio?
+        </th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado2.Descripcion)
+            </td>
+        }
+    </tr>
+    <tr>
+        <th>
+            Atencion prestada oportuna y a tiempo:
+        </th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado21.Descripcion)
+            </td>
+        }
+    </tr>
+    <tr>
+        <th>
+            Horarios de atencion adecuada y respetuosa:
+        </th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado22.Descripcion)
+            </td>
+        }
+    </tr>
+    <tr>
+        <th>
+            Respuesta inmediata a las dudas:
+        </th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado23.Descripcion)
+            </td>
+        }
+    </tr>
+    <tr>
+        <th>
+            Comportamiento del personal en una imagen de honestidad y confianza:
+        </th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado24.Descripcion)
+            </td>
+        }
+    </tr>
+    <tr>
+        <th>
+            Resolucion de las dudas presentadas:
+        </th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado25.Descripcion)
+            </td>
+        }
+    </tr>
+    <tr>
+        <th></th>
+        @foreach (var item in Model)
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        }
+    </tr>
+
+    </table>

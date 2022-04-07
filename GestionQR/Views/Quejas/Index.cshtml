@@ -5,13 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Gestionar quejas existentes</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamentos.Nombre_departamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.Tipo_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_quejas1.Descripción)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios_quejas.Usuario_quejas)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Fecha_Queja)
         </th>
@@ -27,29 +45,29 @@
         <th>
             @Html.DisplayNameFor(model => model.Comentarios_Queja)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departamentos.encargado_departamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Producto.Tipo_Producto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_quejas1.Descripción)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuarios_quejas.Usuario_quejas)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamentos.Nombre_departamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.Tipo_Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_quejas1.Descripción)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios_quejas.Usuario_quejas)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Fecha_Queja)
         </td>
@@ -64,24 +82,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Comentarios_Queja)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Departamentos.encargado_departamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producto.Tipo_Producto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo_quejas1.Descripción)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuarios_quejas.Usuario_quejas)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

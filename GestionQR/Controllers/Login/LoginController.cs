@@ -181,6 +181,42 @@ namespace SistemaRH.Controllers
             return View(reclamaciones);
         }
 
+        public ActionResult EncuestaSatisfaccion()
+        {
+            ViewBag.Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente");
+            ViewBag.Pregunta1 = new SelectList(db.Estado2, "Id", "Descripcion");
+            ViewBag.Pregunta2 = new SelectList(db.Estado2, "Id", "Descripcion");
+            ViewBag.Pregunta3 = new SelectList(db.Estado2, "Id", "Descripcion");
+            ViewBag.Pregunta4 = new SelectList(db.Estado2, "Id", "Descripcion");
+            ViewBag.Pregunta5 = new SelectList(db.Estado2, "Id", "Descripcion");
+            ViewBag.Pregunta6 = new SelectList(db.Estado2, "Id", "Descripcion");
+            return View();
+        }
+
+        // POST: EncuestaSatisfaccion/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
+        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EncuestaSatisfaccion([Bind(Include = "Id,Pregunta1,Pregunta2,Pregunta3,Pregunta4,Pregunta5,Pregunta6,Cliente")] EncuestaSatisfaccion1 encuestaSatisfaccion1)
+        {
+            if (ModelState.IsValid)
+            {
+                db.EncuestaSatisfaccion1.Add(encuestaSatisfaccion1);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", encuestaSatisfaccion1.Cliente);
+            ViewBag.Pregunta1 = new SelectList(db.Estado2, "Id", "Descripcion", encuestaSatisfaccion1.Pregunta1);
+            ViewBag.Pregunta2 = new SelectList(db.Estado2, "Id", "Descripcion", encuestaSatisfaccion1.Pregunta2);
+            ViewBag.Pregunta3 = new SelectList(db.Estado2, "Id", "Descripcion", encuestaSatisfaccion1.Pregunta3);
+            ViewBag.Pregunta4 = new SelectList(db.Estado2, "Id", "Descripcion", encuestaSatisfaccion1.Pregunta4);
+            ViewBag.Pregunta5 = new SelectList(db.Estado2, "Id", "Descripcion", encuestaSatisfaccion1.Pregunta5);
+            ViewBag.Pregunta6 = new SelectList(db.Estado2, "Id", "Descripcion", encuestaSatisfaccion1.Pregunta6);
+            return View(encuestaSatisfaccion1);
+        }
+        
         /*
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -10,112 +10,107 @@ using GestionQR.Models;
 
 namespace GestionQR.Controllers.Administrador
 {
-    public class DepartamentosController : Controller
+    public class Estados2Controller : Controller
     {
         private GestionQREntities db = new GestionQREntities();
 
-        // GET: Departamentos
+        // GET: Estados2
         public ActionResult Index()
         {
-            var departamentos = db.Departamentos.Include(d => d.Estado);
-            return View(departamentos.ToList());
+            return View(db.Estado2.ToList());
         }
 
-        // GET: Departamentos/Details/5
+        // GET: Estados2/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Departamentos departamentos = db.Departamentos.Find(id);
-            if (departamentos == null)
+            Estado2 estado2 = db.Estado2.Find(id);
+            if (estado2 == null)
             {
                 return HttpNotFound();
             }
-            return View(departamentos);
+            return View(estado2);
         }
 
-        // GET: Departamentos/Create
+        // GET: Estados2/Create
         public ActionResult Create()
         {
-            ViewBag.Estado_Departamento = new SelectList(db.Estado, "Id", "Descripcion");
             return View();
         }
 
-        // POST: Departamentos/Create
+        // POST: Estados2/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,Nombre_departamento,tipo_departamento,Estado_Departamento")] Departamentos departamentos)
+        public ActionResult Create([Bind(Include = "Id,Descripcion")] Estado2 estado2)
         {
             if (ModelState.IsValid)
             {
-                db.Departamentos.Add(departamentos);
+                db.Estado2.Add(estado2);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Estado_Departamento = new SelectList(db.Estado, "Id", "Descripcion", departamentos.Estado_Departamento);
-            return View(departamentos);
+            return View(estado2);
         }
 
-        // GET: Departamentos/Edit/5
+        // GET: Estados2/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Departamentos departamentos = db.Departamentos.Find(id);
-            if (departamentos == null)
+            Estado2 estado2 = db.Estado2.Find(id);
+            if (estado2 == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Estado_Departamento = new SelectList(db.Estado, "Id", "Descripcion", departamentos.Estado_Departamento);
-            return View(departamentos);
+            return View(estado2);
         }
 
-        // POST: Departamentos/Edit/5
+        // POST: Estados2/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,Nombre_departamento,tipo_departamento,Estado_Departamento")] Departamentos departamentos)
+        public ActionResult Edit([Bind(Include = "Id,Descripcion")] Estado2 estado2)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(departamentos).State = EntityState.Modified;
+                db.Entry(estado2).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Estado_Departamento = new SelectList(db.Estado, "Id", "Descripcion", departamentos.Estado_Departamento);
-            return View(departamentos);
+            return View(estado2);
         }
 
-        // GET: Departamentos/Delete/5
+        // GET: Estados2/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Departamentos departamentos = db.Departamentos.Find(id);
-            if (departamentos == null)
+            Estado2 estado2 = db.Estado2.Find(id);
+            if (estado2 == null)
             {
                 return HttpNotFound();
             }
-            return View(departamentos);
+            return View(estado2);
         }
 
-        // POST: Departamentos/Delete/5
+        // POST: Estados2/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Departamentos departamentos = db.Departamentos.Find(id);
-            db.Departamentos.Remove(departamentos);
+            Estado2 estado2 = db.Estado2.Find(id);
+            db.Estado2.Remove(estado2);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
