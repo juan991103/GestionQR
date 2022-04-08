@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/UsuarioR.cshtml";
+    Layout = "~/Views/Shared/Login.cshtml";
 }
 
 <h2>Details</h2>
@@ -11,46 +11,6 @@
     <h4>Reclamaciones</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_Reclamacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_Reclamacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Hora_Reclamacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Hora_Reclamacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Departamento_Respuesta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Departamento_Respuesta)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_Respuesta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_Respuesta)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Comentarios_Reclamaciones)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Comentarios_Reclamaciones)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
         </dt>
@@ -97,6 +57,46 @@
 
         <dd>
             @Html.DisplayFor(model => model.Usuarios_reclamaciones.Usuario_reclamo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Reclamacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Reclamacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_Reclamacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_Reclamacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento_Respuesta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamento_Respuesta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Respuesta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Respuesta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentarios_Reclamaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentarios_Reclamaciones)
         </dd>
 
     </dl>

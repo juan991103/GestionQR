@@ -5,21 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Gestioonar productos</h2>
+<h2>Gestionar productos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar producto", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Tipo_Producto)
+            Producto
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fecha_Ortogamiento)
+            Fecha de entrega
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado.Descripcion)
+            Estado
         </th>
         <th></th>
     </tr>
@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.Estado.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

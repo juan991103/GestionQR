@@ -8,15 +8,24 @@
 <h2>Gestionar usuarios con acceso a modificar las reclamos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar usuario", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Usuario_reclamo)
+            Usuarios
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Clave)
+            Claves
+        </th>
+        <th>
+            Departamento
+        </th>
+        <th>
+            Puesto
+        </th>
+        <th>
+            Rol
         </th>
         <th></th>
     </tr>
@@ -30,9 +39,18 @@
             @Html.DisplayFor(modelItem => item.Clave)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.Departamentos.Nombre_departamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puesto1.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rol1.Descripcion_Rol)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

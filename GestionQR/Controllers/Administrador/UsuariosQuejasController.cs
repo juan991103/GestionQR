@@ -17,7 +17,8 @@ namespace GestionQR.Controllers.Administrador
         // GET: UsuariosQuejas
         public ActionResult Index()
         {
-            return View(db.Usuarios_quejas.ToList());
+            var usuarios_quejas = db.Usuarios_quejas.Include(u => u.Departamentos).Include(u => u.Puesto1).Include(u => u.Rol1);
+            return View(usuarios_quejas.ToList());
         }
 
         // GET: UsuariosQuejas/Details/5
@@ -38,6 +39,9 @@ namespace GestionQR.Controllers.Administrador
         // GET: UsuariosQuejas/Create
         public ActionResult Create()
         {
+            ViewBag.Departamento = new SelectList(db.Departamentos, "id", "Nombre_departamento");
+            ViewBag.Puesto = new SelectList(db.Puesto, "Id", "Descripcion");
+            ViewBag.Rol = new SelectList(db.Rol, "Id", "Descripcion_Rol");
             return View();
         }
 
@@ -46,7 +50,7 @@ namespace GestionQR.Controllers.Administrador
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Usuario_quejas,Clave")] Usuarios_quejas usuarios_quejas)
+        public ActionResult Create([Bind(Include = "Id,Usuario_quejas,Clave,Departamento,Rol,Puesto")] Usuarios_quejas usuarios_quejas)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +59,9 @@ namespace GestionQR.Controllers.Administrador
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Departamento = new SelectList(db.Departamentos, "id", "Nombre_departamento", usuarios_quejas.Departamento);
+            ViewBag.Puesto = new SelectList(db.Puesto, "Id", "Descripcion", usuarios_quejas.Puesto);
+            ViewBag.Rol = new SelectList(db.Rol, "Id", "Descripcion_Rol", usuarios_quejas.Rol);
             return View(usuarios_quejas);
         }
 
@@ -70,6 +77,9 @@ namespace GestionQR.Controllers.Administrador
             {
                 return HttpNotFound();
             }
+            ViewBag.Departamento = new SelectList(db.Departamentos, "id", "Nombre_departamento", usuarios_quejas.Departamento);
+            ViewBag.Puesto = new SelectList(db.Puesto, "Id", "Descripcion", usuarios_quejas.Puesto);
+            ViewBag.Rol = new SelectList(db.Rol, "Id", "Descripcion_Rol", usuarios_quejas.Rol);
             return View(usuarios_quejas);
         }
 
@@ -78,7 +88,7 @@ namespace GestionQR.Controllers.Administrador
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Usuario_quejas,Clave")] Usuarios_quejas usuarios_quejas)
+        public ActionResult Edit([Bind(Include = "Id,Usuario_quejas,Clave,Departamento,Rol,Puesto")] Usuarios_quejas usuarios_quejas)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +96,9 @@ namespace GestionQR.Controllers.Administrador
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Departamento = new SelectList(db.Departamentos, "id", "Nombre_departamento", usuarios_quejas.Departamento);
+            ViewBag.Puesto = new SelectList(db.Puesto, "Id", "Descripcion", usuarios_quejas.Puesto);
+            ViewBag.Rol = new SelectList(db.Rol, "Id", "Descripcion_Rol", usuarios_quejas.Rol);
             return View(usuarios_quejas);
         }
 

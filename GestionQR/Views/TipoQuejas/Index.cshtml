@@ -8,7 +8,7 @@
 <h2>Gestionar los tipos de quejas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar un tipo de queja", "Create")
 </p>
 <table class="table">
     <tr>
@@ -16,7 +16,7 @@
             @Html.DisplayNameFor(model => model.Descripción)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estado1.Descripcion)
+            Estado
         </th>
         <th></th>
     </tr>
@@ -30,9 +30,9 @@
             @Html.DisplayFor(modelItem => item.Estado1.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

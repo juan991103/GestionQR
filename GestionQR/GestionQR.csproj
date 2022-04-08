@@ -573,24 +573,8 @@
     <Content Include="Views\TipoReclamacion\Index.cshtml" />
     <Content Include="Views\Shared\UsuarioR.cshtml" />
     <Content Include="Views\Shared\UsuarioQ.cshtml" />
-    <Content Include="Views\QuejasEdit\Index.cshtml" />
-    <Content Include="Views\QuejasEdit\Details.cshtml" />
-    <Content Include="Views\QuejasEdit\Edit.cshtml" />
-    <Content Include="Views\ReclamacionesEdit\Details.cshtml" />
-    <Content Include="Views\ReclamacionesEdit\Edit.cshtml" />
-    <Content Include="Views\ReclamacionesEdit\Index.cshtml" />
     <Content Include="Views\Login\LoginQuejas.cshtml" />
     <Content Include="Views\Login\LoginReclamaciones.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Create.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Delete.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Details.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Edit.cshtml" />
-    <Content Include="Views\UsuariosQuejas\Index.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Create.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Delete.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Details.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
-    <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
     <Content Include="Views\Estados2\Create.cshtml" />
     <Content Include="Views\Estados2\Delete.cshtml" />
     <Content Include="Views\Estados2\Details.cshtml" />
@@ -622,6 +606,22 @@
     <Content Include="Views\Puestos\Details.cshtml" />
     <Content Include="Views\Puestos\Edit.cshtml" />
     <Content Include="Views\Puestos\Index.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Create.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Delete.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Details.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Edit.cshtml" />
+    <Content Include="Views\UsuariosQuejas\Index.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Create.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Delete.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Details.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Edit.cshtml" />
+    <Content Include="Views\UsuariosReclamaciones\Index.cshtml" />
+    <Content Include="Views\QuejasEdit\Details.cshtml" />
+    <Content Include="Views\QuejasEdit\Edit.cshtml" />
+    <Content Include="Views\QuejasEdit\Index.cshtml" />
+    <Content Include="Views\ReclamacionesEdit\Details.cshtml" />
+    <Content Include="Views\ReclamacionesEdit\Edit.cshtml" />
+    <Content Include="Views\ReclamacionesEdit\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

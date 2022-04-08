@@ -35,7 +35,7 @@ namespace GestionQR.Controllers.Usuarios
         {
             var nombres = from s in db.Quejas
                           select s;
-           
+
             if (start == null || end == null)
             {
                 return View();
@@ -76,7 +76,7 @@ namespace GestionQR.Controllers.Usuarios
                 return HttpNotFound();
             }
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", quejas.Nombre_Cliente);
-            ViewBag.Departamento_a_Queja = new SelectList(db.Departamentos, "id", "encargado_departamento", quejas.Departamento_a_Queja);
+            ViewBag.Departamento_a_Queja = new SelectList(db.Departamentos, "id", "Nombre_departamento", quejas.Departamento_a_Queja);
             ViewBag.Estado_Quejas = new SelectList(db.Estado, "Id", "Descripcion", quejas.Estado_Quejas);
             ViewBag.Tipo_Producto = new SelectList(db.Producto, "Id", "Tipo_Producto", quejas.Tipo_Producto);
             ViewBag.Tipo_Quejas = new SelectList(db.Tipo_quejas, "Id", "Descripción", quejas.Tipo_Quejas);
@@ -98,7 +98,7 @@ namespace GestionQR.Controllers.Usuarios
                 return RedirectToAction("Index");
             }
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", quejas.Nombre_Cliente);
-            ViewBag.Departamento_a_Queja = new SelectList(db.Departamentos, "id", "encargado_departamento", quejas.Departamento_a_Queja);
+            ViewBag.Departamento_a_Queja = new SelectList(db.Departamentos, "id", "Nombre_departamento", quejas.Departamento_a_Queja);
             ViewBag.Estado_Quejas = new SelectList(db.Estado, "Id", "Descripcion", quejas.Estado_Quejas);
             ViewBag.Tipo_Producto = new SelectList(db.Producto, "Id", "Tipo_Producto", quejas.Tipo_Producto);
             ViewBag.Tipo_Quejas = new SelectList(db.Tipo_quejas, "Id", "Descripción", quejas.Tipo_Quejas);
@@ -112,6 +112,7 @@ namespace GestionQR.Controllers.Usuarios
         {
             return File(Encoding.ASCII.GetBytes(GridHtml), "application/vnd.ms-excel", "Reporte de Quejas - QrProjectManager.xls");
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

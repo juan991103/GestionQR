@@ -43,41 +43,40 @@
         <a id="myH42">Generado a las </a><a id="date"></a>
         <br><br>
     </div>
-
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Fecha_Queja)
+                Cliente
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hora_Queja)
+                Departamento
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Departamento_Respuesta)
+                Estado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fecha_Respuesta)
+                Producto usado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Comentarios_Queja)
+                Queja
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Clientes.Nombres_Cliente)
+                Usuario en atencion
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Departamentos.Nombre_departamento)
+                Fecha
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Estado.Descripcion)
+                Hora
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Producto.Tipo_Producto)
+                Respuesta del departamento
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tipo_quejas1.Descripción)
+                Fecha de respuesta
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usuarios_quejas.Usuario_quejas)
+                Comentarios
             </th>
             <th></th>
         </tr>
@@ -85,21 +84,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fecha_Queja)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Hora_Queja)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Departamento_Respuesta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fecha_Respuesta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Comentarios_Queja)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
                 </td>
@@ -119,11 +103,28 @@
                     @Html.DisplayFor(modelItem => item.Usuarios_quejas.Usuario_quejas)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                    @Html.DisplayFor(modelItem => item.Fecha_Queja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora_Queja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento_Respuesta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_Respuesta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comentarios_Queja)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.Id })
                 </td>
             </tr>
         }
+
     </table>
 </div>
 
