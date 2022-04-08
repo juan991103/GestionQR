@@ -22,10 +22,6 @@ namespace GestionQR.Models
         [StringLength(100)]
         public string Descripcion { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Funciones { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuarios_quejas> Usuarios_quejas { get; set; }
 

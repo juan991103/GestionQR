@@ -31,11 +31,11 @@ namespace GestionQR.Models
         {
             modelBuilder.Entity<Clientes>()
                 .Property(e => e.Nombres_Cliente)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Clientes>()
                 .Property(e => e.Apellidos_Cliente)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Clientes>()
                 .Property(e => e.Teléfono)
@@ -207,10 +207,6 @@ namespace GestionQR.Models
 
             modelBuilder.Entity<Puesto>()
                 .Property(e => e.Descripcion)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Puesto>()
-                .Property(e => e.Funciones)
                 .IsFixedLength();
 
             modelBuilder.Entity<Puesto>()
