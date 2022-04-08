@@ -18,31 +18,31 @@ namespace GestionQR.Models
 
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [StringLength(50)]
         public string Nombres_Cliente { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [StringLength(50)]
         public string Apellidos_Cliente { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo obligatorio")]
         [StringLength(45)]
         public string Teléfono { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo obligatorio")]
         [StringLength(50)]
         public string Direccion { get; set; }
 
-        [Required]
-        [StringLength(20)]
+        [Required(ErrorMessage = "Campo obligatorio")]
+        [StringLength(50)]
         public string Provincia { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo obligatorio")]
         [StringLength(50)]
         public string Sector { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Campo obligatorio")]
         [StringLength(50)]
         public string Email { get; set; }
 
