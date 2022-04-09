@@ -204,7 +204,7 @@ namespace SistemaRH.Controllers
             {
                 db.EncuestaSatisfaccion1.Add(encuestaSatisfaccion1);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("BuzonPrincipal");
             }
 
             ViewBag.Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", encuestaSatisfaccion1.Cliente);
