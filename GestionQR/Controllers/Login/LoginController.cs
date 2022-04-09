@@ -135,7 +135,7 @@ namespace SistemaRH.Controllers
             {
                 db.Quejas.Add(quejas);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Seleccion", "Login");
             }
 
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", quejas.Nombre_Cliente);
@@ -169,7 +169,7 @@ namespace SistemaRH.Controllers
             {
                 db.Reclamaciones.Add(reclamaciones);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Seleccion", "Login");
             }
 
             ViewBag.Nombre_Cliente = new SelectList(db.Clientes, "Id", "Nombres_Cliente", reclamaciones.Nombre_Cliente);

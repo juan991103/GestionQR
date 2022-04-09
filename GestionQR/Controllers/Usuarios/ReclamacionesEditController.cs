@@ -29,25 +29,6 @@ namespace GestionQR.Controllers.Usuarios
             }
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(DateTime start, DateTime end)
-        {
-            var nombres = from s in db.Reclamaciones
-                          select s;
-
-            if (start == null || end == null)
-            {
-                return View();
-            }
-            else
-            {
-                nombres = nombres.Where(s => s.Fecha_Reclamacion >= start && s.Fecha_Reclamacion <= end);
-            }
-
-            return View(nombres.AsNoTracking().ToListAsync());
-        }
-
         // GET: ReclamacionesEdit/Details/5
         public ActionResult Details(int? id)
         {

@@ -22,15 +22,6 @@
 <br />
 <br />
 
-@using (Html.BeginForm("Index", "ReclamacionesEdit", FormMethod.Post))
-{
-    <div class="form-actions no-color d-flex justify-content-between">
-        <input type="date" name="start" value="" class="form-control" placeholder="Fecha desde...">
-        <input type="date" name="end" value="" class="form-control" placeholder="Fecha hasta...">
-        <input type="submit" value="Buscar" class="btn btn-outline-success form-control" />
-    </div>
-}
-
 @using (Html.BeginForm("Export", "ReclamacionesEdit", FormMethod.Post))
 {
     <input type="hidden" name="GridHtml" />
@@ -49,25 +40,25 @@
                 Cliente
             </th>
             <th>
-                Departamento
-            </th>
-            <th>
-                Estado
+                Reclamacion
             </th>
             <th>
                 Producto usado
-            </th>
-            <th>
-                Queja
-            </th>
-            <th>
-                Usuario en atencion
             </th>
             <th>
                 Fecha
             </th>
             <th>
                 Hora
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+                Departamento a queja
+            </th>
+            <th>
+                Usuario en atencion
             </th>
             <th>
                 Respuesta del departamento
@@ -88,25 +79,25 @@
                     @Html.DisplayFor(modelItem => item.Clientes.Nombres_Cliente)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Departamentos.Nombre_departamento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estado.Descripcion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Producto.Tipo_Producto)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Tipo_reclamacion1.Descripción)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Usuarios_reclamaciones.Usuario_reclamo)
+                    @Html.DisplayFor(modelItem => item.Producto.Tipo_Producto)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Fecha_Reclamacion)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Hora_Reclamacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamentos.Nombre_departamento)
+                </td>                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuarios_reclamaciones.Usuario_reclamo)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Departamento_Respuesta)
@@ -119,8 +110,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Borrar", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id })
                 </td>
             </tr>
         }

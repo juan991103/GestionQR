@@ -21,8 +21,7 @@ namespace GestionQR.Models
         [Required]
         [StringLength(50)]
         public string Tipo_Producto { get; set; }
-        [Required(ErrorMessage = "Elige la fecha")]
-        [DataType(DataType.Date)]
+
         public DateTime Fecha_Ortogamiento { get; set; }
 
         public int Estado_Producto { get; set; }

@@ -12,6 +12,7 @@ namespace GestionQR.Models
         public Usuarios_quejas()
         {
             Quejas = new HashSet<Quejas>();
+            Quejas1 = new HashSet<Quejas>();
         }
 
         public int Id { get; set; }
@@ -36,6 +37,9 @@ namespace GestionQR.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Quejas> Quejas { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Quejas> Quejas1 { get; set; }
 
         public virtual Rol Rol1 { get; set; }
     }

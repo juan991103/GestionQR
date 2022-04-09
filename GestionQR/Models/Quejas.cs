@@ -19,7 +19,6 @@ namespace GestionQR.Models
         public int Departamento_a_Queja { get; set; }
 
         public int Usuario_Quejas_Atendido { get; set; }
-
         [Required(ErrorMessage = "Elige la fecha")]
         [DataType(DataType.Date)]
         public DateTime Fecha_Queja { get; set; }
@@ -35,7 +34,7 @@ namespace GestionQR.Models
         public int Estado_Quejas { get; set; }
 
         [Required(ErrorMessage = "Campo obligatorio")]
-        [StringLength(150)]
+        [StringLength(200)]
         public string Comentarios_Queja { get; set; }
 
         public virtual Clientes Clientes { get; set; }
@@ -49,5 +48,7 @@ namespace GestionQR.Models
         public virtual Tipo_quejas Tipo_quejas1 { get; set; }
 
         public virtual Usuarios_quejas Usuarios_quejas { get; set; }
+
+        public virtual Usuarios_quejas Usuarios_quejas1 { get; set; }
     }
 }

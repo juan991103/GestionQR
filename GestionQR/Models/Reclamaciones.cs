@@ -35,7 +35,7 @@ namespace GestionQR.Models
         public int Estado_Reclamacion { get; set; }
 
         [Required(ErrorMessage = "Campo obligatorio")]
-        [StringLength(50)]
+        [StringLength(200)]
         public string Comentarios_Reclamaciones { get; set; }
 
         public virtual Clientes Clientes { get; set; }
@@ -49,5 +49,7 @@ namespace GestionQR.Models
         public virtual Tipo_reclamacion Tipo_reclamacion1 { get; set; }
 
         public virtual Usuarios_reclamaciones Usuarios_reclamaciones { get; set; }
+
+        public virtual Usuarios_reclamaciones Usuarios_reclamaciones1 { get; set; }
     }
 }

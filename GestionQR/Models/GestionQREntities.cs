@@ -8,7 +8,7 @@ namespace GestionQR.Models
     public partial class GestionQREntities : DbContext
     {
         public GestionQREntities()
-            : base("name=GestionQREntities1")
+            : base("name=GestionQREntities2")
         {
         }
 
@@ -287,6 +287,12 @@ namespace GestionQR.Models
                 .HasForeignKey(e => e.Usuario_Quejas_Atendido)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Usuarios_quejas>()
+                .HasMany(e => e.Quejas1)
+                .WithRequired(e => e.Usuarios_quejas1)
+                .HasForeignKey(e => e.Usuario_Quejas_Atendido)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Usuarios_reclamaciones>()
                 .Property(e => e.Usuario_reclamo)
                 .IsUnicode(false);
@@ -298,6 +304,12 @@ namespace GestionQR.Models
             modelBuilder.Entity<Usuarios_reclamaciones>()
                 .HasMany(e => e.Reclamaciones)
                 .WithRequired(e => e.Usuarios_reclamaciones)
+                .HasForeignKey(e => e.Usuario_Reclamo_Atendido)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Usuarios_reclamaciones>()
+                .HasMany(e => e.Reclamaciones1)
+                .WithRequired(e => e.Usuarios_reclamaciones1)
                 .HasForeignKey(e => e.Usuario_Reclamo_Atendido)
                 .WillCascadeOnDelete(false);
         }
